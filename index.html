@@ -56,21 +56,6 @@
             margin: 0 auto 2rem auto;
             font-size: 1.2rem;
         }
-        .btn {
-            display: inline-block;
-            padding: 12px 32px;
-            background-color: var(--cream);
-            color: var(--plum);
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 4px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: opacity 0.3s;
-        }
-        .btn:hover {
-            opacity: 0.8;
-        }
 
         /* --- General Sections --- */
         section {
@@ -86,6 +71,26 @@
             border-bottom: 1px solid var(--plum);
             display: inline-block;
             padding-bottom: 0.5rem;
+        }
+
+        /* --- Brand Story --- */
+        .brand-story {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+        .brand-story p {
+            margin-bottom: 1.5rem;
+        }
+        .brand-story .sign-off {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            font-style: italic;
+            margin-top: 3rem;
+            letter-spacing: 1px;
         }
 
         /* --- Menu Grid --- */
@@ -106,28 +111,6 @@
             font-size: 1.7rem;
             margin-top: 0;
             margin-bottom: 1rem;
-        }
-
-        /* --- Events List --- */
-        .events-list {
-            list-style: none;
-            padding: 0;
-            max-width: 700px;
-            margin: 0 auto;
-            text-align: left;
-        }
-        .events-list li {
-            padding: 1.5rem;
-            border-bottom: 1px dashed var(--plum);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-        .date {
-            font-size: 1.2rem;
-            font-weight: bold;
         }
 
         /* --- Footer --- */
@@ -154,7 +137,19 @@
     <section class="hero">
         <h2>Mindful Moments, Crafted with Care</h2>
         <p>Welcome to our pop-up cafe. We specialize in bringing people together over premium matcha, artisanal coffee, refreshing mocktails, and curated plant-based bites.</p>
-        <a href="#events" class="btn">Find Our Next Pop-Up</a>
+    </section>
+
+    <section id="story">
+        <h2 class="section-title">Our Story</h2>
+        <div class="brand-story">
+            <p>There's a kind of coffee shop that doesn't exist much in the West. The kind where you sit for hours, where the coffee is an excuse to stay, where no one is rushing you out the door. I grew up knowing that feeling — through Balkan coffee culture, through the way people gather, linger, and actually talk. That slowness wasn't laziness. It was intention.</p>
+            
+            <p><em>Sabr</em> is an Arabic word meaning patience. It traveled into the Albanian language through Islam, woven into our everyday speech, our prayers, our way of moving through hard things. I wanted to bring it back — not as something heavy or religious, but as an invitation. A reminder that slowing down is its own kind of strength.</p>
+            
+            <p>Sabr & Sips was born from that. A space where the drink in your hand is just the beginning. Where you're allowed to take up time, take up space, and just be. No rush. No guilt. Just good drinks, good company, and a little patience with yourself.</p>
+            
+            <div class="sign-off">Drink. Pause. Repeat.</div>
+        </div>
     </section>
 
     <section id="menu">
@@ -166,11 +161,11 @@
             </div>
             <div class="menu-item">
                 <h3>Coffee</h3>
-                <p>Ethically sourced beans, brewed to perfection. From our slow, signature pour-overs to rich and smooth nitro cold brews.</p>
+                <p>Ethically sourced beans, brewed to perfection. Whether you are craving a creamy, comforting latte or an authentic, slow-brewed Turkish coffee, we have you covered.</p>
             </div>
             <div class="menu-item">
                 <h3>Mocktails</h3>
-                <p>Botanical, refreshing, and complex. Elevate your afternoon with our Pomegranate Spritz or the signature Sabr Tonic.</p>
+                <p>Botanical, refreshing, and complex. Hand-crafted using our own homemade syrups to elevate your afternoon with vibrant, alcohol-free flavors.</p>
             </div>
         </div>
     </section>
@@ -178,23 +173,14 @@
     <section id="catering" style="background-color: rgba(114, 28, 71, 0.05); border-radius: 12px;">
         <h2 class="section-title">Plant-Based Catering</h2>
         <p style="max-width: 800px; margin: 0 auto; font-size: 1.1rem;">
-            Beyond beverages, we offer fully plant-based food catering for your private events, meetings, and celebrations. From wholesome breakfast pastries to globally-inspired savory bites, we create custom menus that perfectly complement our drink station. 
+            Beyond beverages, we offer fully plant-based food catering (vegan, gluten-free, nut-free, etc.). We are happy to accommodate any dietary restrictions to ensure all your guests are taken care of. Currently, we specialize in serving smaller party venues and intimate gatherings, creating custom menus that perfectly complement our drink station.
         </p>
     </section>
 
     <section id="events">
         <h2 class="section-title">Where to Find Us Next</h2>
-        <ul class="events-list">
-            <li>
-                <span class="date">Saturday, April 25</span>
-                <span><strong>Local Farmers Market</strong><br>9:00 AM - 1:00 PM</span>
-            </li>
-            <li>
-                <span class="date">Sunday, May 3</span>
-                <span><strong>Vintage Street Fair</strong><br>10:00 AM - 4:00 PM</span>
-            </li>
-        </ul>
-        <p style="margin-top: 2rem;"><em>Check our Instagram for last-minute location updates!</em></p>
+        <p style="font-size: 1.5rem; font-weight: bold; margin-top: 2rem;">Coming Soon</p>
+        <p style="margin-top: 1rem;"><em>Check our Instagram for future locations and dates!</em></p>
     </section>
 
     <footer>
