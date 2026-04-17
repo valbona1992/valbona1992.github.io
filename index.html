@@ -622,9 +622,72 @@
       letter-spacing: 0.05em;
     }
 
+    /* ─── FAQ Section ─── */
+    #faq {
+      background-color: var(--white);
+      padding: clamp(60px, 7vw, 100px) clamp(1.5rem, 5vw, 4rem);
+    }
+    .faq-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .faq-h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      color: var(--wine);
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .faq-accordion {
+      border-top: 1px solid rgba(74, 28, 44, 0.15);
+    }
+    .faq-item {
+      border-bottom: 1px solid rgba(74, 28, 44, 0.15);
+    }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 24px 0;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 1.05rem;
+      color: var(--wine);
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: color 0.3s ease;
+    }
+    .faq-question:hover {
+      color: var(--terracotta);
+    }
+    .faq-icon {
+      font-size: 1.5rem;
+      font-weight: 300;
+      transition: transform 0.3s ease;
+    }
+    .faq-question.active .faq-icon {
+      transform: rotate(45deg);
+      color: var(--terracotta);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-out, padding 0.4s ease;
+    }
+    .faq-answer p {
+      padding-bottom: 24px;
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--body);
+      font-weight: 300;
+    }
+
     /* ─── Contact ─── */
     #book-us {
-      background-color: var(--white);
+      background-color: var(--cream);
       padding: clamp(60px, 8vw, 120px) clamp(1.5rem, 5vw, 4rem);
     }
     .contact-inner {
@@ -655,7 +718,7 @@
       font-size: 0.95rem;
       color: var(--wine);
       border: 1px solid rgba(74, 28, 44, 0.2);
-      background-color: var(--cream);
+      background-color: var(--white);
       padding: 14px 16px;
       width: 100%;
       outline: none;
@@ -668,7 +731,7 @@
     }
     textarea.form-input { resize: vertical; }
     .contact-success {
-      background-color: var(--cream);
+      background-color: var(--white);
       padding: 40px 32px;
       text-align: center;
       display: none;
@@ -759,7 +822,6 @@
 </head>
 <body>
 
-  <!-- ─── Navigation ─── -->
   <nav id="main-nav">
     <div class="nav-inner">
       <a href="#" class="nav-logo" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">sabr & sips</a>
@@ -776,7 +838,6 @@
     </div>
   </nav>
 
-  <!-- Mobile Overlay -->
   <div class="mobile-overlay" id="mobile-overlay">
     <a href="#our-story" class="mobile-nav-link" onclick="closeMobile();smoothScroll(event,'#our-story')">Our Story</a>
     <a href="#menu" class="mobile-nav-link" onclick="closeMobile();smoothScroll(event,'#menu')">Menu</a>
@@ -784,9 +845,7 @@
     <a href="#book-us" class="mobile-nav-link btn-style nav-link" onclick="closeMobile();smoothScroll(event,'#book-us')">Book Us</a>
   </div>
 
-  <!-- ─── Hero ─── -->
   <section id="hero">
-    <!-- Hero background: replace src with your actual photo -->
     <img
       class="hero-bg"
       src="images/hero-bg.jpg"
@@ -796,7 +855,6 @@
     <div class="hero-overlay"></div>
     <div class="hero-blur"></div>
 
-    <!-- SVG stroke reveal -->
     <div class="hero-svg">
       <svg class="hero-svg-el" width="100%" height="100%" viewBox="0 0 840 880" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -824,10 +882,8 @@
     </div>
   </section>
 
-  <!-- ─── Marquee ─── -->
   <div class="marquee-bar" aria-hidden="true">
     <div class="marquee-track">
-      <!-- 12 items (duplicated for seamless loop) -->
       <span class="marquee-item">Drink. Pause. Repeat.<span class="marquee-dot">●</span></span>
       <span class="marquee-item">Drink. Pause. Repeat.<span class="marquee-dot">●</span></span>
       <span class="marquee-item">Drink. Pause. Repeat.<span class="marquee-dot">●</span></span>
@@ -843,7 +899,6 @@
     </div>
   </div>
 
-  <!-- ─── Features ─── -->
   <section id="features">
     <div class="features-grid">
       <div class="animate-in">
@@ -878,7 +933,6 @@
     </div>
   </section>
 
-  <!-- ─── Our Story ─── -->
   <section id="our-story">
     <div class="story-inner">
       <div class="story-text">
@@ -890,7 +944,6 @@
         <blockquote class="story-blockquote animate-in">Drink. Pause. Repeat.</blockquote>
       </div>
       <div class="story-img-col animate-in">
-        <!-- Replace src with your actual photo -->
         <img
           class="story-photo"
           src="images/story-founder.jpg"
@@ -902,12 +955,10 @@
     </div>
   </section>
 
-  <!-- ─── Menu ─── -->
   <section id="menu">
     <div class="menu-inner">
       <h2 class="menu-h2 animate-in">What We Pour</h2>
       <div class="menu-grid">
-        <!-- Matcha -->
         <div class="menu-card animate-in">
           <div class="menu-card-img-wrap">
             <img class="menu-card-img" src="images/menu-matcha.jpg" alt="Matcha"
@@ -920,7 +971,6 @@
             <span class="menu-card-tag">Signature Drinks</span>
           </div>
         </div>
-        <!-- Coffee -->
         <div class="menu-card animate-in">
           <div class="menu-card-img-wrap">
             <img class="menu-card-img" src="images/menu-coffee.jpg" alt="Coffee"
@@ -933,7 +983,6 @@
             <span class="menu-card-tag">Signature Drinks</span>
           </div>
         </div>
-        <!-- Mocktails — wide -->
         <div class="menu-card menu-card-wide animate-in">
           <div class="menu-card-wide-inner">
             <div class="menu-card-img-wrap">
@@ -952,7 +1001,6 @@
     </div>
   </section>
 
-  <!-- ─── Catering ─── -->
   <section id="catering">
     <div class="catering-inner">
       <div class="section-label animate-in" style="justify-content:center;">Catering</div>
@@ -964,7 +1012,6 @@
     </div>
   </section>
 
-  <!-- ─── Find Us ─── -->
   <section id="find-us">
     <div class="findus-inner">
       <div class="findus-text">
@@ -989,7 +1036,54 @@
     </div>
   </section>
 
-  <!-- ─── Contact / Book Us ─── -->
+  <section id="faq">
+    <div class="faq-inner">
+      <h2 class="faq-h2 animate-in">Frequently Asked Questions</h2>
+      
+      <div class="faq-accordion animate-in">
+        <div class="faq-item">
+          <button class="faq-question">
+            Are all of your catering options plant-based?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, our entire catering menu is 100% plant-based. We specialize in curating elevated, nourishing vegan dishes and bites. We can also easily accommodate gluten-free, nut-free, and other specific dietary requests for your guests.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Where are your pop-ups usually located?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>We are based in Chicago, IL, and host our pop-ups at boutique venues, private celebrations, and intimate community gatherings throughout the city. We announce all upcoming public locations and dates on our Instagram.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Can I book Sabr & Sips for a private event?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely. Our mobile setup is designed to bring a refined, minimalist cafe atmosphere directly to your private gathering. We handle the aesthetics and the menu so you can focus on your guests.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What kind of drinks do you serve?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>We pour ceremonial grade matcha, slow-brewed authentic Turkish coffee, and premium espresso drinks. We also offer a selection of botanical mocktails crafted with our own house-made syrups.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="book-us">
     <div class="contact-inner">
       <h2 class="contact-h2 animate-in">Inquire About Your Event</h2>
@@ -1010,7 +1104,6 @@
     </div>
   </section>
 
-  <!-- ─── Footer ─── -->
   <footer>
     <p class="footer-logo">sabr & sips</p>
     <p class="footer-location">Based in Chicago, IL</p>
@@ -1068,6 +1161,20 @@
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
     document.querySelectorAll('.animate-in').forEach(el => io.observe(el));
+
+    // ─── FAQ Accordion Logic ───
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+      question.addEventListener('click', () => {
+        question.classList.toggle('active');
+        const answer = question.nextElementSibling;
+        if (question.classList.contains('active')) {
+          answer.style.maxHeight = answer.scrollHeight + "px";
+        } else {
+          answer.style.maxHeight = 0;
+        }
+      });
+    });
 
     // ─── Contact form ───
     function handleSubmit(e) {
