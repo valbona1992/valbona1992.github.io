@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sabr & Sips | Patience in Every Sip</title>
     <style>
-        /* --- Brand Colors & Fonts --- */
+        /* --- Brand Colors & Typography --- */
         :root {
-            --cream: #FAF6F0; /* Matched to your logo background */
-            --plum: #721C47;  /* Matched to your logo text */
+            --cream: #FAF6F0; 
+            --plum: #721C47;  
             --dark-plum: #4A0D2B;
+            --white: #FFFFFF;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -18,68 +23,130 @@
             padding: 0;
             background-color: var(--cream);
             color: var(--plum);
-            line-height: 1.6;
+            line-height: 1.8;
+            font-weight: 300;
         }
 
-        /* --- Header / Logo Area --- */
-        header {
-            padding: 3rem 2rem;
-            text-align: center;
+        /* --- Sticky Navigation --- */
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: rgba(250, 246, 240, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(114, 28, 71, 0.1);
         }
-        .logo-text {
-            font-size: 4rem;
-            font-weight: 300;
-            letter-spacing: -2px;
-            margin: 0;
+        .nav-logo {
+            font-size: 1.5rem;
+            letter-spacing: -1px;
+            font-weight: 400;
+            text-decoration: none;
+            color: var(--plum);
         }
-        .tagline {
-            font-size: 1rem;
-            letter-spacing: 3px;
+        .nav-links a {
+            margin-left: 2rem;
+            text-decoration: none;
+            color: var(--plum);
+            font-size: 0.9rem;
             text-transform: uppercase;
-            margin-top: 0.5rem;
+            letter-spacing: 1px;
+            transition: opacity 0.3s;
+        }
+        .nav-links a:hover {
+            opacity: 0.6;
+        }
+        .btn-nav {
+            border: 1px solid var(--plum);
+            padding: 8px 16px;
+            border-radius: 4px;
         }
 
         /* --- Hero Section --- */
         .hero {
             text-align: center;
-            padding: 4rem 2rem;
-            background-color: var(--plum);
-            color: var(--cream);
+            padding: 6rem 2rem;
+            background-color: var(--white);
         }
-        .hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            font-weight: 400;
+        .logo-text {
+            font-size: 5rem;
+            font-weight: 300;
+            letter-spacing: -2px;
+            margin: 0;
+            line-height: 1;
+        }
+        .tagline {
+            font-size: 1.1rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-top: 1rem;
+            margin-bottom: 3rem;
+            color: var(--dark-plum);
         }
         .hero p {
             max-width: 600px;
-            margin: 0 auto 2rem auto;
+            margin: 0 auto 3rem auto;
             font-size: 1.2rem;
         }
+        .btn-primary {
+            display: inline-block;
+            padding: 14px 36px;
+            background-color: var(--plum);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+            margin: 0.5rem;
+        }
+        .btn-primary:hover {
+            background-color: var(--dark-plum);
+            color: var(--white);
+        }
+        .btn-secondary {
+            display: inline-block;
+            padding: 14px 36px;
+            background-color: transparent;
+            color: var(--plum);
+            border: 1px solid var(--plum);
+            text-decoration: none;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            margin: 0.5rem;
+        }
+        .btn-secondary:hover {
+            background-color: var(--plum);
+            color: var(--white);
+        }
 
-        /* --- General Sections --- */
+        /* --- General Layout --- */
         section {
-            padding: 4rem 2rem;
+            padding: 6rem 2rem;
             max-width: 1000px;
             margin: 0 auto;
-            text-align: center;
         }
         h2.section-title {
-            font-size: 2rem;
-            margin-bottom: 2.5rem;
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
             font-weight: 300;
-            border-bottom: 1px solid var(--plum);
-            display: inline-block;
-            padding-bottom: 0.5rem;
+            text-align: center;
+            letter-spacing: -0.5px;
         }
 
         /* --- Brand Story --- */
         .brand-story {
-            max-width: 800px;
+            max-width: 750px;
             margin: 0 auto;
-            text-align: left;
             font-size: 1.15rem;
-            line-height: 1.8;
+            line-height: 2;
         }
         .brand-story p {
             margin-bottom: 1.5rem;
@@ -87,10 +154,32 @@
         .brand-story .sign-off {
             text-align: center;
             font-size: 1.5rem;
-            font-weight: bold;
             font-style: italic;
             margin-top: 3rem;
+            color: var(--dark-plum);
+        }
+
+        /* --- The Experience (Values) --- */
+        .values-grid {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            text-align: center;
+            margin-top: -2rem;
+            padding-bottom: 4rem;
+        }
+        .value-item {
+            flex: 1 1 250px;
+            padding: 2rem;
+        }
+        .value-item h4 {
+            font-size: 1.2rem;
+            text-transform: uppercase;
             letter-spacing: 1px;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--plum);
+            display: inline-block;
+            padding-bottom: 0.5rem;
         }
 
         /* --- Menu Grid --- */
@@ -102,15 +191,57 @@
         }
         .menu-item {
             flex: 1 1 280px;
-            border: 1px solid rgba(114, 28, 71, 0.3);
-            padding: 2.5rem 2rem;
-            border-radius: 8px;
-            background-color: #fff;
+            background-color: var(--white);
+            padding: 3rem 2rem;
+            border-radius: 4px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(114, 28, 71, 0.03);
         }
         .menu-item h3 {
-            font-size: 1.7rem;
+            font-size: 1.5rem;
             margin-top: 0;
             margin-bottom: 1rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        /* --- Catering Section --- */
+        .catering-wrapper {
+            background-color: var(--white);
+            padding: 4rem;
+            border-radius: 4px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(114, 28, 71, 0.03);
+        }
+
+        /* --- Events Section --- */
+        .events-banner {
+            text-align: center;
+            padding: 4rem 2rem;
+            border-top: 1px solid rgba(114, 28, 71, 0.1);
+            border-bottom: 1px solid rgba(114, 28, 71, 0.1);
+        }
+
+        /* --- Contact / Booking --- */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid rgba(114, 28, 71, 0.2);
+            background-color: var(--white);
+            border-radius: 4px;
+            font-family: inherit;
+            color: var(--plum);
+        }
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 120px;
         }
 
         /* --- Footer --- */
@@ -118,25 +249,39 @@
             background-color: var(--dark-plum);
             color: var(--cream);
             text-align: center;
-            padding: 3rem 2rem;
-            margin-top: 2rem;
+            padding: 4rem 2rem;
         }
         footer a {
             color: var(--cream);
-            text-decoration: underline;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(250, 246, 240, 0.3);
+            transition: border-color 0.3s;
+        }
+        footer a:hover {
+            border-color: var(--cream);
         }
     </style>
 </head>
 <body>
 
-    <header>
+    <nav>
+        <a href="#" class="nav-logo">sabr & sips</a>
+        <div class="nav-links">
+            <a href="#story">Our Story</a>
+            <a href="#menu">Menu</a>
+            <a href="#catering">Catering</a>
+            <a href="#book" class="btn-nav">Book Us</a>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
         <h1 class="logo-text">sabr & sips</h1>
         <div class="tagline">Patience in Every Sip</div>
-    </header>
-
-    <section class="hero">
-        <h2>Mindful Moments, Crafted with Care</h2>
-        <p>Welcome to our pop-up cafe. We specialize in bringing people together over premium matcha, artisanal coffee, refreshing mocktails, and curated plant-based bites.</p>
+        <p>A pop-up cafe bringing people together over premium matcha, artisanal coffee, refreshing mocktails, and curated plant-based bites.</p>
+        <div>
+            <a href="#book" class="btn-primary">Inquire for Events</a>
+            <a href="#events" class="btn-secondary">Find Our Pop-Up</a>
+        </div>
     </section>
 
     <section id="story">
@@ -152,6 +297,23 @@
         </div>
     </section>
 
+    <section>
+        <div class="values-grid">
+            <div class="value-item">
+                <h4>Mindful Ingredients</h4>
+                <p>From ceremonial grade matcha to ethically sourced beans, we pour intention into every single cup.</p>
+            </div>
+            <div class="value-item">
+                <h4>Plant-Based Perfection</h4>
+                <p>100% plant-based food catering designed to nourish. We handle the dietary restrictions so you don't have to.</p>
+            </div>
+            <div class="value-item">
+                <h4>Curated Aesthetics</h4>
+                <p>A minimalist, luxurious mobile setup that elevates the design and atmosphere of your intimate event.</p>
+            </div>
+        </div>
+    </section>
+
     <section id="menu">
         <h2 class="section-title">What We Pour</h2>
         <div class="menu-grid">
@@ -161,7 +323,7 @@
             </div>
             <div class="menu-item">
                 <h3>Coffee</h3>
-                <p>Ethically sourced beans, brewed to perfection. Whether you are craving a creamy, comforting latte or an authentic, slow-brewed Turkish coffee, we have you covered.</p>
+                <p>Ethically sourced beans, brewed to perfection. Whether you are craving a creamy, comforting latte or an authentic, slow-brewed Turkish coffee.</p>
             </div>
             <div class="menu-item">
                 <h3>Mocktails</h3>
@@ -170,23 +332,43 @@
         </div>
     </section>
 
-    <section id="catering" style="background-color: rgba(114, 28, 71, 0.05); border-radius: 12px;">
-        <h2 class="section-title">Plant-Based Catering</h2>
-        <p style="max-width: 800px; margin: 0 auto; font-size: 1.1rem;">
-            Beyond beverages, we offer fully plant-based food catering (vegan, gluten-free, nut-free, etc.). We are happy to accommodate any dietary restrictions to ensure all your guests are taken care of. Currently, we specialize in serving smaller party venues and intimate gatherings, creating custom menus that perfectly complement our drink station.
-        </p>
+    <section id="catering">
+        <div class="catering-wrapper">
+            <h2 class="section-title" style="margin-bottom: 1.5rem;">Plant-Based Event Catering</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+                Beyond beverages, we offer fully plant-based food catering (vegan, gluten-free, nut-free, etc.). We are happy to accommodate any dietary restrictions to ensure all your guests are taken care of. 
+            </p>
+            <h4 style="font-size: 1.2rem; text-transform: uppercase; letter-spacing: 1px;">Ideal For:</h4>
+            <p style="color: var(--dark-plum);">Intimate Gatherings • Private Celebrations • Boutique Pop-Ups • Small Venues</p>
+            <br>
+            <a href="#book" class="btn-primary">Request a Custom Menu</a>
+        </div>
     </section>
 
-    <section id="events">
-        <h2 class="section-title">Where to Find Us Next</h2>
-        <p style="font-size: 1.5rem; font-weight: bold; margin-top: 2rem;">Coming Soon</p>
+    <section id="events" class="events-banner">
+        <h2 class="section-title" style="margin-bottom: 0;">Where to Find Us Next</h2>
+        <p style="font-size: 1.5rem; margin-top: 1rem;">Coming Soon</p>
         <p style="margin-top: 1rem;"><em>Check our Instagram for future locations and dates!</em></p>
     </section>
 
+    <section id="book">
+        <h2 class="section-title">Inquire About Your Event</h2>
+        <p style="text-align: center; margin-bottom: 3rem;">Ready to bring the Sabr & Sips experience to your next gathering? Fill out the form below or send us a DM on Instagram.</p>
+        
+        <form class="contact-form">
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email Address" required>
+            <input type="text" placeholder="Event Type & Estimated Guest Count">
+            <textarea placeholder="Tell us about your vision, date, and any dietary requirements..."></textarea>
+            <button type="submit" class="btn-primary" style="width: 100%; border: none; cursor: pointer;">Send Inquiry</button>
+        </form>
+    </section>
+
     <footer>
-        <p><strong>Sabr & Sips</strong> | Based in Chicago, IL</p>
+        <h2 style="font-weight: 300; margin-top: 0;">sabr & sips</h2>
+        <p>Based in Chicago, IL</p>
         <p>Follow us on Instagram: <a href="https://instagram.com/sabrandsips" target="_blank">@sabrandsips</a></p>
-        <p style="margin-top: 2rem; font-size: 0.9rem;">To book us for catering or private pop-ups, please send us a DM!</p>
+        <p style="margin-top: 3rem; font-size: 0.8rem; opacity: 0.7;">© 2026 Sabr & Sips. All rights reserved.</p>
     </footer>
 
 </body>
