@@ -523,6 +523,7 @@
     }
 
     /* ─── Catering ─── */
+  
     #catering {
       background-color: var(--white);
       padding: clamp(60px, 8vw, 120px) clamp(1.5rem, 5vw, 4rem);
@@ -540,6 +541,195 @@
       font-size: clamp(2rem, 4vw, 3rem);
       color: var(--wine);
       margin-bottom: 24px;
+    }
+    
+    /* Experiences & Pricing Split */
+    .catering-split {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 60px;
+      margin-bottom: 80px;
+    }
+    .catering-details {
+      flex: 1;
+      min-width: 300px;
+    }
+    .catering-details h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.8rem;
+      color: var(--wine);
+      margin-bottom: 24px;
+    }
+    .catering-details p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--body);
+      margin-bottom: 24px;
+    }
+    .catering-list {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 32px;
+    }
+    .catering-list li {
+      position: relative;
+      padding-left: 32px;
+      margin-bottom: 16px;
+      font-size: 0.95rem;
+      color: var(--body);
+    }
+    .catering-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--wine);
+      font-weight: bold;
+    }
+    .catering-details-footer {
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--muted);
+    }
+    .catering-details-footer a {
+      color: var(--wine);
+      text-decoration: underline;
+      font-weight: 500;
+    }
+    
+    /* Pricing Card */
+    .pricing-card {
+      flex: 1;
+      min-width: 300px;
+      background-color: var(--wine);
+      color: var(--white);
+      padding: 48px;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(74, 28, 44, 0.1);
+    }
+    .pricing-card h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.8rem;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .pricing-card > p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 32px;
+    }
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 32px;
+    }
+    .pricing-table td {
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      font-size: 0.95rem;
+    }
+    .pricing-table tr:last-child td { border-bottom: none; }
+    .pricing-table td:last-child { text-align: right; font-weight: 500; }
+    .pricing-lead-time {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.7);
+      border-top: 1px solid rgba(255,255,255,0.15);
+      padding-top: 24px;
+      line-height: 1.6;
+    }
+
+    /* Who We Serve */
+    .who-we-serve {
+      background-color: var(--cream);
+      padding: 64px clamp(24px, 5vw, 64px);
+      border-radius: 8px;
+      text-align: center;
+      margin-bottom: 80px;
+    }
+    .who-we-serve h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.2rem;
+      color: var(--wine);
+      margin-bottom: 16px;
+    }
+    .who-we-serve > p {
+      color: var(--body);
+      margin-bottom: 48px;
+      font-size: 1.05rem;
+    }
+    .serve-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 32px;
+      text-align: left;
+    }
+    .serve-card h4 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--wine);
+      margin-bottom: 16px;
+    }
+    .serve-card-img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border-radius: 4px;
+      margin-bottom: 24px;
+      background-color: var(--white);
+    }
+    .serve-card p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--body);
+    }
+
+    /* Custom Packages */
+    .custom-packages {
+      background-color: var(--footer);
+      color: var(--cream);
+      padding: 64px clamp(24px, 5vw, 64px);
+      border-radius: 8px;
+    }
+    .custom-packages h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.2rem;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+    .custom-packages > p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: rgba(247, 243, 238, 0.9);
+      margin-bottom: 32px;
+    }
+    .custom-packages ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 32px;
+    }
+    .custom-packages li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 20px;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+    .custom-packages li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      font-size: 1.5rem;
+      line-height: 1;
+      top: -2px;
+      color: var(--terracotta);
+    }
+    .custom-packages strong {
+      color: var(--white);
+      font-weight: 500;
+    }
+    @media (max-width: 768px) {
+      .catering-split { flex-direction: column; gap: 40px; }
+      .who-we-serve, .custom-packages { padding: 40px 24px; }
     }
     
     /* Experiences & Pricing Split */
