@@ -528,9 +528,12 @@
       padding: clamp(60px, 8vw, 120px) clamp(1.5rem, 5vw, 4rem);
     }
     .catering-inner {
-      max-width: 700px;
+      max-width: 1200px;
       margin: 0 auto;
+    }
+    .catering-header {
       text-align: center;
+      margin-bottom: 64px;
     }
     .catering-label .section-label { justify-content: center; }
     .catering-h2 {
@@ -538,25 +541,185 @@
       color: var(--wine);
       margin-bottom: 24px;
     }
-    .catering-p {
+    
+    /* Experiences & Pricing Split */
+    .catering-split {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 60px;
+      margin-bottom: 80px;
+    }
+    .catering-details {
+      flex: 1;
+      min-width: 300px;
+    }
+    .catering-details h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.8rem;
+      color: var(--wine);
+      margin-bottom: 24px;
+    }
+    .catering-details p {
       font-size: 1rem;
-      line-height: 1.75;
+      line-height: 1.7;
       color: var(--body);
+      margin-bottom: 24px;
+    }
+    .catering-list {
+      list-style: none;
+      padding: 0;
       margin-bottom: 32px;
     }
-    .catering-ideal-label {
-      font-family: 'Inter', sans-serif;
-      font-weight: 500;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--wine);
-      margin-bottom: 12px;
-    }
-    .catering-ideal {
+    .catering-list li {
+      position: relative;
+      padding-left: 32px;
+      margin-bottom: 16px;
       font-size: 0.95rem;
       color: var(--body);
-      margin-bottom: 40px;
+    }
+    .catering-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--wine);
+      font-weight: bold;
+    }
+    .catering-details-footer {
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--muted);
+    }
+    .catering-details-footer a {
+      color: var(--wine);
+      text-decoration: underline;
+    }
+    
+    /* Pricing Card */
+    .pricing-card {
+      flex: 1;
+      min-width: 300px;
+      background-color: var(--wine);
+      color: var(--white);
+      padding: 48px;
+      border-radius: 8px;
+    }
+    .pricing-card h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.8rem;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .pricing-card > p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 32px;
+    }
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 32px;
+    }
+    .pricing-table td {
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      font-size: 0.95rem;
+    }
+    .pricing-table tr:last-child td { border-bottom: none; }
+    .pricing-table td:last-child { text-align: right; font-weight: 500; }
+    .pricing-lead-time {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.7);
+      border-top: 1px solid rgba(255,255,255,0.2);
+      padding-top: 24px;
+      line-height: 1.6;
+    }
+
+    /* Who We Serve */
+    .who-we-serve {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+    .who-we-serve h3 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 2rem;
+      color: var(--body);
+      margin-bottom: 16px;
+    }
+    .who-we-serve > p {
+      color: var(--muted);
+      margin-bottom: 48px;
+    }
+    .serve-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      text-align: left;
+    }
+    .serve-card h4 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--wine);
+      margin-bottom: 16px;
+    }
+    .serve-card-img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border-radius: 4px;
+      margin-bottom: 24px;
+      background-color: var(--cream);
+    }
+    .serve-card p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--body);
+    }
+
+    /* Custom Packages */
+    .custom-packages {
+      background-color: var(--footer);
+      color: var(--cream);
+      padding: 64px;
+      border-radius: 8px;
+    }
+    .custom-packages h3 {
+      font-size: 2.5rem;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+    .custom-packages p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: rgba(247, 243, 238, 0.9);
+      margin-bottom: 24px;
+    }
+    .custom-packages ul {
+      list-style: none;
+      padding-left: 24px;
+      margin-bottom: 32px;
+    }
+    .custom-packages li {
+      position: relative;
+      margin-bottom: 16px;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+    .custom-packages li::before {
+      content: '•';
+      position: absolute;
+      left: -20px;
+      color: var(--terracotta);
+    }
+    .custom-packages strong {
+      color: var(--white);
+      font-weight: 500;
+    }
+    @media (max-width: 768px) {
+      .catering-split { flex-direction: column; }
+      .custom-packages { padding: 32px 24px; }
+      .custom-packages h3 { font-size: 2rem; }
     }
 
     /* ─── Find Us ─── */
@@ -1003,12 +1166,90 @@
 
   <section id="catering">
     <div class="catering-inner">
-      <div class="section-label animate-in" style="justify-content:center;">Catering</div>
-      <h2 class="catering-h2 animate-in">Plant-Based Event Catering</h2>
-      <p class="catering-p animate-in">Beyond beverages, we offer fully plant-based food catering (vegan, gluten-free, nut-free, etc.). We are happy to accommodate any dietary restrictions to ensure all your guests are taken care of.</p>
-      <p class="catering-ideal-label animate-in">Ideal For:</p>
-      <p class="catering-ideal animate-in">Intimate Gatherings • Private Celebrations • Boutique Pop-Ups • Small Venues</p>
-      <a href="#book-us" class="btn-dark animate-in" onclick="smoothScroll(event,'#book-us')">Request a Custom Menu</a>
+      
+      <div class="catering-header animate-in">
+        <div class="section-label catering-label" style="justify-content:center;">Catering</div>
+        <h2 class="catering-h2">Plant-Based Event Catering</h2>
+      </div>
+
+      <div class="catering-split animate-in">
+        
+        <div class="catering-details">
+          <h3>Elevated Experiences, Custom Menus</h3>
+          <p>We don't just serve drinks and snacks — we create complete sensory experiences tailored to your event. Every menu is custom-designed around your vision, dietary needs, and aesthetic preferences.</p>
+          <ul class="catering-list">
+            <li>100% plant-based, vegan & gluten-free options</li>
+            <li>Nut-free & allergy-friendly menus available</li>
+            <li>Custom specialty drink recipes & seasonal syrups</li>
+            <li>Artisanal pastries & baked goods</li>
+            <li>Aesthetic table design & curated setup</li>
+            <li>Intimate to medium-sized gatherings</li>
+          </ul>
+          <p class="catering-details-footer">Let's discuss your vision. <a href="#book-us" onclick="smoothScroll(event,'#book-us')">Fill out a catering inquiry below</a> or DM us @sabrandsips.</p>
+        </div>
+
+        <div class="pricing-card">
+          <h3>Pricing & Packages</h3>
+          <p>All prices include setup, serving, and cleanup.</p>
+          <table class="pricing-table">
+            <tr>
+              <td>Small Gathering (10-15)</td>
+              <td>$300-$450</td>
+            </tr>
+            <tr>
+              <td>Intimate Event (15-25)</td>
+              <td>$500-$750</td>
+            </tr>
+            <tr>
+              <td>Medium Celebration (25-40)</td>
+              <td>$800-$1,200</td>
+            </tr>
+            <tr>
+              <td>Custom Inquiries</td>
+              <td>Contact Us</td>
+            </tr>
+          </table>
+          <p class="pricing-lead-time">Lead time: 2-4 weeks preferred. Rush inquiries welcome — contact us to discuss availability.</p>
+        </div>
+
+      </div>
+
+      <div class="who-we-serve animate-in">
+        <h3>Who We Serve</h3>
+        <p>Whether it's 15 guests or 50, Sabr & Sips makes it easy to bring elevated cafe culture to all types of events around Chicago.</p>
+        
+        <div class="serve-grid">
+          <div class="serve-card">
+            <h4>Boutique Pop-Ups & Retail</h4>
+            <img class="serve-card-img" src="images/serve-popup.jpg" alt="Pop-up event" onerror="this.outerHTML='<div class=\'serve-card-img img-placeholder\'>add serve-popup.jpg</div>'" loading="lazy"/>
+            <p>Give your customers a reason to linger. From retail launch parties to brand activations, our minimalist mobile setup fits perfectly into boutique environments, enhancing your aesthetic.</p>
+          </div>
+          
+          <div class="serve-card">
+            <h4>Private Celebrations</h4>
+            <img class="serve-card-img" src="images/serve-private.jpg" alt="Private event catering" onerror="this.outerHTML='<div class=\'serve-card-img img-placeholder\'>add serve-private.jpg</div>'" loading="lazy"/>
+            <p>Craft beverages make a statement — and what better way to thank your guests than with a matcha or latte made to order? We bring the charm and slowness your intimate gathering deserves.</p>
+          </div>
+          
+          <div class="serve-card">
+            <h4>Corporate Gatherings & Workshops</h4>
+            <img class="serve-card-img" src="images/serve-corporate.jpg" alt="Corporate catering" onerror="this.outerHTML='<div class=\'serve-card-img img-placeholder\'>add serve-corporate.jpg</div>'" loading="lazy"/>
+            <p>Looking to elevate your next team retreat or creative workshop? We provide focused, mindful service to keep your attendees nourished, energized, and engaged.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="custom-packages animate-in">
+        <h3>Custom Packages</h3>
+        <p>We believe cafe catering should be as flexible as your event needs. That's why Sabr & Sips offers several service options:</p>
+        <ul>
+          <li><strong>Pop-Up Bar Events:</strong> Unlimited drinks for a set time period. Custom menu and branding available.</li>
+          <li><strong>Mindful Catering:</strong> Full-service beverage and 100% plant-based food curation tailored entirely to your dietary restrictions.</li>
+          <li><strong>Private Events:</strong> Customizable mobile setups and menus, designed for intimate parties, showers, and celebrations.</li>
+        </ul>
+        <p style="margin-bottom: 0;">No matter the event, we make sure your service is slow, intentional, stylish, and completely stress-free.</p>
+      </div>
+
     </div>
   </section>
 
