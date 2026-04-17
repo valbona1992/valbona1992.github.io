@@ -364,37 +364,6 @@
     .animate-in:nth-child(5) { transition-delay: 0.48s; }
     .animate-in:nth-child(6) { transition-delay: 0.60s; }
 
-    /* ─── Features ─── */
-    #features {
-      background-color: var(--white);
-      padding: clamp(60px, 7vw, 100px) clamp(1.5rem, 5vw, 4rem);
-    }
-    .features-grid {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
-    }
-    .feature-icon { margin-bottom: 16px; }
-    .feature-title {
-      font-family: 'Inter', sans-serif;
-      font-weight: 500;
-      font-size: 1.1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--wine);
-      padding-bottom: 16px;
-      margin-bottom: 16px;
-      border-bottom: 1px solid rgba(74, 28, 44, 0.15);
-    }
-    .feature-desc {
-      font-weight: 300;
-      font-size: 0.95rem;
-      line-height: 1.7;
-      color: var(--body);
-    }
-
     /* ─── Our Story ─── */
     #our-story {
       background-color: var(--cream);
@@ -439,6 +408,37 @@
       object-fit: cover;
       border-radius: 8px;
       background-color: #d6ccc2;
+    }
+
+    /* ─── Features ─── */
+    #features {
+      background-color: var(--white);
+      padding: clamp(60px, 7vw, 100px) clamp(1.5rem, 5vw, 4rem);
+    }
+    .features-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+    .feature-icon { margin-bottom: 16px; }
+    .feature-title {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--wine);
+      padding-bottom: 16px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid rgba(74, 28, 44, 0.15);
+    }
+    .feature-desc {
+      font-weight: 300;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--body);
     }
 
     /* ─── Menu ─── */
@@ -899,6 +899,28 @@
     </div>
   </div>
 
+  <section id="our-story">
+    <div class="story-inner">
+      <div class="story-text">
+        <div class="section-label animate-in">Our Story</div>
+        <h2 class="story-h2 animate-in">There's a kind of coffee shop that doesn't exist much in the West.</h2>
+        <p class="story-p animate-in">The kind where you sit for hours, where the coffee is an excuse to stay, where no one is rushing you out the door. I grew up knowing that feeling — through Balkan coffee culture, through the way people gather, linger, and actually talk. That slowness wasn't laziness. It was intention.</p>
+        <p class="story-p animate-in"><strong class="story-accent">Sabr</strong> is an Arabic word meaning patience. It traveled into the Albanian language through Islam, woven into our everyday speech, our prayers, our way of moving through hard things. I wanted to bring it back — not as something heavy or religious, but as an invitation. A reminder that slowing down is its own kind of strength.</p>
+        <p class="story-p animate-in">Sabr & Sips was born from that. A space where the drink in your hand is just the beginning. Where you're allowed to take up time, take up space, and just be. No rush. No guilt. Just good drinks, good company, and a little patience with yourself.</p>
+        <blockquote class="story-blockquote animate-in">Drink. Pause. Repeat.</blockquote>
+      </div>
+      <div class="story-img-col animate-in">
+        <img
+          class="story-photo"
+          src="images/story-founder.jpg"
+          alt="Enjoying Turkish coffee"
+          onerror="this.outerHTML='<div class=\'story-photo img-placeholder\'>add&nbsp;story-founder.jpg</div>'"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
   <section id="features">
     <div class="features-grid">
       <div class="animate-in">
@@ -929,28 +951,6 @@
         </div>
         <h3 class="feature-title">Curated Aesthetics</h3>
         <p class="feature-desc">A minimalist, luxurious mobile setup that elevates the design and atmosphere of your intimate event.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="our-story">
-    <div class="story-inner">
-      <div class="story-text">
-        <div class="section-label animate-in">Our Story</div>
-        <h2 class="story-h2 animate-in">There's a kind of coffee shop that doesn't exist much in the West.</h2>
-        <p class="story-p animate-in">The kind where you sit for hours, where the coffee is an excuse to stay, where no one is rushing you out the door. I grew up knowing that feeling — through Balkan coffee culture, through the way people gather, linger, and actually talk. That slowness wasn't laziness. It was intention.</p>
-        <p class="story-p animate-in"><strong class="story-accent">Sabr</strong> is an Arabic word meaning patience. It traveled into the Albanian language through Islam, woven into our everyday speech, our prayers, our way of moving through hard things. I wanted to bring it back — not as something heavy or religious, but as an invitation. A reminder that slowing down is its own kind of strength.</p>
-        <p class="story-p animate-in">Sabr & Sips was born from that. A space where the drink in your hand is just the beginning. Where you're allowed to take up time, take up space, and just be. No rush. No guilt. Just good drinks, good company, and a little patience with yourself.</p>
-        <blockquote class="story-blockquote animate-in">Drink. Pause. Repeat.</blockquote>
-      </div>
-      <div class="story-img-col animate-in">
-        <img
-          class="story-photo"
-          src="images/story-founder.jpg"
-          alt="Enjoying Turkish coffee"
-          onerror="this.outerHTML='<div class=\'story-photo img-placeholder\'>add&nbsp;story-founder.jpg</div>'"
-          loading="lazy"
-        />
       </div>
     </div>
   </section>
