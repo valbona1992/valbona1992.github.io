@@ -1,375 +1,1082 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sabr & Sips | Patience in Every Sip</title>
-    <style>
-        /* --- Brand Colors & Typography --- */
-        :root {
-            --cream: #FAF6F0; 
-            --plum: #721C47;  
-            --dark-plum: #4A0D2B;
-            --white: #FFFFFF;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sabr & Sips — Patience in Every Sip</title>
+  <meta name="description" content="A pop-up cafe bringing people together over premium matcha, artisanal coffee, refreshing mocktails, and curated plant-based bites. Based in Chicago, IL." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream: #F7F3EE;
+      --wine: #4A1C2C;
+      --terracotta: #C8553D;
+      --white: #FFFFFF;
+      --muted: #7A6B5F;
+      --body: #5A4D44;
+      --footer: #2C1810;
+    }
 
-        html {
-            scroll-behavior: smooth;
-        }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--cream);
-            color: var(--plum);
-            line-height: 1.8;
-            font-weight: 300;
-        }
+    html { scroll-behavior: smooth; }
 
-        /* --- Sticky Navigation --- */
-        nav {
-            position: sticky;
-            top: 0;
-            background-color: rgba(250, 246, 240, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(114, 28, 71, 0.1);
-        }
-        .nav-logo {
-            font-size: 1.5rem;
-            letter-spacing: -1px;
-            font-weight: 400;
-            text-decoration: none;
-            color: var(--plum);
-        }
-        .nav-links a {
-            margin-left: 2rem;
-            text-decoration: none;
-            color: var(--plum);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: opacity 0.3s;
-        }
-        .nav-links a:hover {
-            opacity: 0.6;
-        }
-        .btn-nav {
-            border: 1px solid var(--plum);
-            padding: 8px 16px;
-            border-radius: 4px;
-        }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 300;
+      letter-spacing: 0.01em;
+      background-color: var(--cream);
+      color: var(--body);
+      line-height: 1.75;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
 
-        /* --- Hero Section --- */
-        .hero {
-            text-align: center;
-            padding: 6rem 2rem;
-            background-color: var(--white);
-        }
-        .logo-text {
-            font-size: 5rem;
-            font-weight: 300;
-            letter-spacing: -2px;
-            margin: 0;
-            line-height: 1;
-        }
-        .tagline {
-            font-size: 1.1rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            margin-top: 1rem;
-            margin-bottom: 3rem;
-            color: var(--dark-plum);
-        }
-        .hero p {
-            max-width: 600px;
-            margin: 0 auto 3rem auto;
-            font-size: 1.2rem;
-        }
-        .btn-primary {
-            display: inline-block;
-            padding: 14px 36px;
-            background-color: var(--plum);
-            color: var(--white);
-            text-decoration: none;
-            border-radius: 4px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.9rem;
-            transition: background-color 0.3s;
-            margin: 0.5rem;
-        }
-        .btn-primary:hover {
-            background-color: var(--dark-plum);
-            color: var(--white);
-        }
-        .btn-secondary {
-            display: inline-block;
-            padding: 14px 36px;
-            background-color: transparent;
-            color: var(--plum);
-            border: 1px solid var(--plum);
-            text-decoration: none;
-            border-radius: 4px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-            margin: 0.5rem;
-        }
-        .btn-secondary:hover {
-            background-color: var(--plum);
-            color: var(--white);
-        }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-weight: 400;
+    }
 
-        /* --- General Layout --- */
-        section {
-            padding: 6rem 2rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        h2.section-title {
-            font-size: 2.2rem;
-            margin-bottom: 3rem;
-            font-weight: 300;
-            text-align: center;
-            letter-spacing: -0.5px;
-        }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; }
 
-        /* --- Brand Story --- */
-        .brand-story {
-            max-width: 750px;
-            margin: 0 auto;
-            font-size: 1.15rem;
-            line-height: 2;
-        }
-        .brand-story p {
-            margin-bottom: 1.5rem;
-        }
-        .brand-story .sign-off {
-            text-align: center;
-            font-size: 1.5rem;
-            font-style: italic;
-            margin-top: 3rem;
-            color: var(--dark-plum);
-        }
+    /* ─── Nav ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+    }
+    nav.scrolled {
+      background-color: rgba(247, 243, 238, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 5vw, 4rem);
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.25rem;
+      color: var(--wine);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .nav-link {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--wine);
+      transition: color 0.3s ease;
+    }
+    .nav-link:hover { color: var(--terracotta); }
+    .nav-link-btn {
+      border: 1px solid var(--wine);
+      padding: 10px 28px;
+    }
+    .nav-link-btn:hover {
+      background-color: var(--wine);
+      color: var(--cream) !important;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 6px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      width: 28px;
+      height: 28px;
+    }
+    .hamburger span {
+      display: block;
+      width: 20px;
+      height: 1.5px;
+      background-color: var(--wine);
+      transition: transform 0.3s ease;
+    }
+    .mobile-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 99;
+      background-color: var(--cream);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+    }
+    .mobile-overlay.open { display: flex; }
+    .mobile-nav-link {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 2rem;
+      color: var(--wine);
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 0.5s ease forwards;
+    }
+    .mobile-nav-link:nth-child(1) { animation-delay: 0.1s; }
+    .mobile-nav-link:nth-child(2) { animation-delay: 0.2s; }
+    .mobile-nav-link:nth-child(3) { animation-delay: 0.3s; }
+    .mobile-nav-link:nth-child(4) { animation-delay: 0.4s; }
+    .mobile-nav-link.btn-style {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 1px solid var(--wine);
+      padding: 14px 36px;
+      margin-top: 16px;
+      animation-delay: 0.5s;
+    }
 
-        /* --- The Experience (Values) --- */
-        .values-grid {
-            display: flex;
-            gap: 2rem;
-            flex-wrap: wrap;
-            text-align: center;
-            margin-top: -2rem;
-            padding-bottom: 4rem;
-        }
-        .value-item {
-            flex: 1 1 250px;
-            padding: 2rem;
-        }
-        .value-item h4 {
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1rem;
-            border-bottom: 1px solid var(--plum);
-            display: inline-block;
-            padding-bottom: 0.5rem;
-        }
+    /* ─── Hero ─── */
+    #hero {
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      transform: scale(1.02);
+      transition: transform 2s ease;
+    }
+    #hero.revealed .hero-bg { transform: scale(1.0); }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(44, 24, 16, 0.55) 0%,
+        rgba(44, 24, 16, 0.3) 50%,
+        rgba(44, 24, 16, 0.6) 100%
+      );
+      z-index: 2;
+    }
+    .hero-blur {
+      position: absolute;
+      inset: 0;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      z-index: 3;
+      opacity: 1;
+      pointer-events: none;
+      transition: opacity 1.2s ease 3.5s;
+    }
+    #hero.revealed .hero-blur { opacity: 0; }
+    .hero-svg {
+      position: absolute;
+      inset: 0;
+      z-index: 10;
+      pointer-events: none;
+      transition: opacity 1.5s ease 4s;
+    }
+    #hero.revealed .hero-svg { opacity: 0; }
+    .stroke-reveal-path {
+      stroke-dasharray: 2800;
+      stroke-dashoffset: 2800;
+      transition: stroke-dashoffset 3.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) 0.5s;
+    }
+    #hero.drawing .stroke-reveal-path { stroke-dashoffset: 0; }
+    .hero-content {
+      position: relative;
+      z-index: 20;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 clamp(1.5rem, 5vw, 4rem);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    #hero.revealed .hero-content {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 4.3s;
+    }
+    .hero-title {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(3rem, 8vw, 7rem);
+      line-height: 0.95;
+      color: #FFFFFF;
+      margin-bottom: 16px;
+      text-shadow: 0 2px 40px rgba(0,0,0,0.25);
+    }
+    .hero-tagline {
+      font-size: clamp(0.85rem, 1.5vw, 1rem);
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 24px;
+    }
+    .hero-desc {
+      font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+      font-weight: 300;
+      max-width: 540px;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 40px;
+      line-height: 1.7;
+    }
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+    }
+    .btn-primary {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background-color: var(--terracotta);
+      color: #FFF;
+      padding: 14px 36px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      display: inline-block;
+    }
+    .btn-primary:hover { background-color: #B3452F; }
+    .btn-secondary {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background-color: transparent;
+      color: #FFF;
+      padding: 14px 36px;
+      border: 1px solid rgba(255,255,255,0.7);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+    .btn-secondary:hover { background-color: rgba(255,255,255,0.12); }
+    .btn-dark {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background-color: var(--wine);
+      color: #FFF;
+      padding: 14px 36px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      display: inline-block;
+    }
+    .btn-dark:hover { background-color: #5A2C3C; }
 
-        /* --- Menu Grid --- */
-        .menu-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            justify-content: center;
-        }
-        .menu-item {
-            flex: 1 1 280px;
-            background-color: var(--white);
-            padding: 3rem 2rem;
-            border-radius: 4px;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(114, 28, 71, 0.03);
-        }
-        .menu-item h3 {
-            font-size: 1.5rem;
-            margin-top: 0;
-            margin-bottom: 1rem;
-            font-weight: 400;
-            letter-spacing: 1px;
-        }
+    /* ─── Marquee ─── */
+    .marquee-bar {
+      background-color: var(--wine);
+      padding: 20px 0;
+      overflow: hidden;
+      width: 100%;
+    }
+    .marquee-track {
+      display: flex;
+      white-space: nowrap;
+      animation: marquee 25s linear infinite;
+      will-change: transform;
+    }
+    .marquee-item {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--cream);
+      padding-right: 48px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+    }
+    .marquee-dot {
+      color: var(--terracotta);
+      margin-left: 48px;
+    }
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
 
-        /* --- Catering Section --- */
-        .catering-wrapper {
-            background-color: var(--white);
-            padding: 4rem;
-            border-radius: 4px;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(114, 28, 71, 0.03);
-        }
+    /* ─── Section shared ─── */
+    .section-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background-color: var(--terracotta);
+    }
 
-        /* --- Events Section --- */
-        .events-banner {
-            text-align: center;
-            padding: 4rem 2rem;
-            border-top: 1px solid rgba(114, 28, 71, 0.1);
-            border-bottom: 1px solid rgba(114, 28, 71, 0.1);
-        }
+    .animate-in {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .animate-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .animate-in:nth-child(2) { transition-delay: 0.12s; }
+    .animate-in:nth-child(3) { transition-delay: 0.24s; }
+    .animate-in:nth-child(4) { transition-delay: 0.36s; }
+    .animate-in:nth-child(5) { transition-delay: 0.48s; }
+    .animate-in:nth-child(6) { transition-delay: 0.60s; }
 
-        /* --- Contact / Booking --- */
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 1px solid rgba(114, 28, 71, 0.2);
-            background-color: var(--white);
-            border-radius: 4px;
-            font-family: inherit;
-            color: var(--plum);
-        }
-        .contact-form textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
+    /* ─── Features ─── */
+    #features {
+      background-color: var(--white);
+      padding: clamp(60px, 7vw, 100px) clamp(1.5rem, 5vw, 4rem);
+    }
+    .features-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+    .feature-icon { margin-bottom: 16px; }
+    .feature-title {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--wine);
+      padding-bottom: 16px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid rgba(74, 28, 44, 0.15);
+    }
+    .feature-desc {
+      font-weight: 300;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--body);
+    }
 
-        /* --- Footer --- */
-        footer {
-            background-color: var(--dark-plum);
-            color: var(--cream);
-            text-align: center;
-            padding: 4rem 2rem;
-        }
-        footer a {
-            color: var(--cream);
-            text-decoration: none;
-            border-bottom: 1px solid rgba(250, 246, 240, 0.3);
-            transition: border-color 0.3s;
-        }
-        footer a:hover {
-            border-color: var(--cream);
-        }
-    </style>
+    /* ─── Our Story ─── */
+    #our-story {
+      background-color: var(--cream);
+      padding: clamp(60px, 8vw, 120px) clamp(1.5rem, 5vw, 4rem);
+    }
+    .story-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: clamp(40px, 5vw, 80px);
+    }
+    .story-text { flex: 55; }
+    .story-img-col { flex: 45; }
+    .story-h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      line-height: 1.2;
+      color: var(--wine);
+      margin-bottom: 32px;
+    }
+    .story-p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--body);
+      margin-bottom: 20px;
+    }
+    .story-accent { font-weight: 500; color: var(--terracotta); }
+    .story-blockquote {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.5rem;
+      font-style: italic;
+      color: var(--wine);
+      border-left: 2px solid var(--terracotta);
+      padding-left: 24px;
+      line-height: 1.4;
+      margin-top: 12px;
+    }
+    .story-photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      border-radius: 8px;
+      background-color: #d6ccc2;
+    }
+
+    /* ─── Menu ─── */
+    #menu {
+      background-color: var(--cream);
+      padding: clamp(60px, 8vw, 120px) clamp(1.5rem, 5vw, 4rem);
+    }
+    .menu-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .menu-h2 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      line-height: 1.1;
+      color: var(--wine);
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .menu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .menu-card {
+      background-color: var(--white);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .menu-card:hover { transform: translateY(-4px); }
+    .menu-card-img-wrap {
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      background-color: #d6ccc2;
+    }
+    .menu-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .menu-card:hover .menu-card-img { transform: scale(1.04); }
+    .menu-card-body { padding: 24px; }
+    .menu-card-title {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.5rem;
+      color: var(--wine);
+      margin-bottom: 8px;
+    }
+    .menu-card-desc {
+      font-weight: 300;
+      font-size: 0.9rem;
+      line-height: 1.65;
+      color: var(--body);
+      margin-bottom: 16px;
+    }
+    .menu-card-tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      background-color: var(--cream);
+      color: var(--muted);
+      padding: 4px 12px;
+      display: inline-block;
+    }
+    .menu-card-wide {
+      grid-column: span 2;
+    }
+    .menu-card-wide .menu-card-wide-inner {
+      display: flex;
+    }
+    .menu-card-wide .menu-card-img-wrap {
+      flex: 1;
+      aspect-ratio: unset;
+      min-height: 240px;
+    }
+    .menu-card-wide .menu-card-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 32px;
+    }
+
+    /* ─── Catering ─── */
+    #catering {
+      background-color: var(--white);
+      padding: clamp(60px, 8vw, 120px) clamp(1.5rem, 5vw, 4rem);
+    }
+    .catering-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .catering-label .section-label { justify-content: center; }
+    .catering-h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--wine);
+      margin-bottom: 24px;
+    }
+    .catering-p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--body);
+      margin-bottom: 32px;
+    }
+    .catering-ideal-label {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--wine);
+      margin-bottom: 12px;
+    }
+    .catering-ideal {
+      font-size: 0.95rem;
+      color: var(--body);
+      margin-bottom: 40px;
+    }
+
+    /* ─── Find Us ─── */
+    #find-us {
+      background-color: var(--cream);
+      padding: clamp(60px, 7vw, 100px) clamp(1.5rem, 5vw, 4rem);
+    }
+    .findus-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: clamp(40px, 5vw, 80px);
+    }
+    .findus-text { flex: 40; }
+    .findus-img-col { flex: 60; position: relative; }
+    .findus-h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      color: var(--wine);
+      margin-bottom: 12px;
+    }
+    .findus-coming {
+      font-weight: 400;
+      font-size: 1.1rem;
+      color: var(--terracotta);
+      margin-bottom: 16px;
+    }
+    .findus-p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--body);
+      margin-bottom: 24px;
+    }
+    .findus-ig {
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: var(--wine);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.3s ease;
+    }
+    .findus-ig:hover { color: var(--terracotta); }
+    .findus-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      border-radius: 8px;
+      background-color: #d6ccc2;
+      display: block;
+    }
+    .findus-badge {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      background-color: rgba(74, 28, 44, 0.9);
+      color: var(--cream);
+      padding: 8px 16px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ─── Contact ─── */
+    #book-us {
+      background-color: var(--white);
+      padding: clamp(60px, 8vw, 120px) clamp(1.5rem, 5vw, 4rem);
+    }
+    .contact-inner {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .contact-h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      color: var(--wine);
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .contact-p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--body);
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .form-input {
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      font-size: 0.95rem;
+      color: var(--wine);
+      border: 1px solid rgba(74, 28, 44, 0.2);
+      background-color: var(--cream);
+      padding: 14px 16px;
+      width: 100%;
+      outline: none;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .form-input::placeholder { color: #A99B8F; }
+    .form-input:focus {
+      border-color: var(--terracotta);
+      box-shadow: 0 0 0 3px rgba(200, 85, 61, 0.1);
+    }
+    textarea.form-input { resize: vertical; }
+    .contact-success {
+      background-color: var(--cream);
+      padding: 40px 32px;
+      text-align: center;
+      display: none;
+    }
+    .contact-success.visible { display: block; }
+    .contact-success-title {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.5rem;
+      color: var(--wine);
+      margin-bottom: 12px;
+    }
+    .contact-success-p {
+      font-size: 1rem;
+      color: var(--body);
+    }
+
+    /* ─── Footer ─── */
+    footer {
+      background-color: var(--footer);
+      padding: 60px clamp(1.5rem, 5vw, 4rem);
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.25rem;
+      color: var(--cream);
+      margin-bottom: 12px;
+    }
+    .footer-location {
+      font-weight: 300;
+      font-size: 0.85rem;
+      color: rgba(247, 243, 238, 0.6);
+      margin-bottom: 16px;
+    }
+    .footer-ig {
+      font-size: 0.85rem;
+      color: var(--cream);
+    }
+    .footer-ig a {
+      color: var(--cream);
+      transition: color 0.3s ease;
+    }
+    .footer-ig a:hover { color: var(--terracotta); }
+    .footer-copy {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      color: rgba(247, 243, 238, 0.4);
+      margin-top: 32px;
+    }
+
+    /* ─── Placeholder image fallback ─── */
+    .img-placeholder {
+      background: linear-gradient(135deg, #d6ccc2 0%, #c4b5a8 50%, #b5a090 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(74,28,44,0.3);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .features-grid { grid-template-columns: 1fr; }
+      .story-inner { flex-direction: column; }
+      .menu-grid { grid-template-columns: 1fr; }
+      .menu-card-wide { grid-column: span 1; }
+      .menu-card-wide .menu-card-wide-inner { flex-direction: column; }
+      .findus-inner { flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .animate-marquee { animation: none; }
+      .animate-in { opacity: 1; transform: none; transition: none; }
+      .hero-content { opacity: 1; transform: none; transition: none; }
+      .hero-blur { opacity: 0; }
+      .hero-svg { opacity: 0; }
+    }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
 
-    <nav>
-        <a href="#" class="nav-logo">sabr & sips</a>
-        <div class="nav-links">
-            <a href="#story">Our Story</a>
-            <a href="#menu">Menu</a>
-            <a href="#catering">Catering</a>
-            <a href="#book" class="btn-nav">Book Us</a>
+  <!-- ─── Navigation ─── -->
+  <nav id="main-nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">sabr & sips</a>
+      <div class="nav-links">
+        <a href="#our-story" class="nav-link" onclick="smoothScroll(event,'#our-story')">Our Story</a>
+        <a href="#menu" class="nav-link" onclick="smoothScroll(event,'#menu')">Menu</a>
+        <a href="#catering" class="nav-link" onclick="smoothScroll(event,'#catering')">Catering</a>
+        <a href="#book-us" class="nav-link nav-link-btn" onclick="smoothScroll(event,'#book-us')">Book Us</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span id="ham1"></span>
+        <span id="ham2"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" id="mobile-overlay">
+    <a href="#our-story" class="mobile-nav-link" onclick="closeMobile();smoothScroll(event,'#our-story')">Our Story</a>
+    <a href="#menu" class="mobile-nav-link" onclick="closeMobile();smoothScroll(event,'#menu')">Menu</a>
+    <a href="#catering" class="mobile-nav-link" onclick="closeMobile();smoothScroll(event,'#catering')">Catering</a>
+    <a href="#book-us" class="mobile-nav-link btn-style nav-link" onclick="closeMobile();smoothScroll(event,'#book-us')">Book Us</a>
+  </div>
+
+  <!-- ─── Hero ─── -->
+  <section id="hero">
+    <!-- Hero background: replace src with your actual photo -->
+    <img
+      class="hero-bg"
+      src="images/hero-bg.jpg"
+      alt="Sabr & Sips — Turkish coffee preparation"
+      onerror="this.style.background='linear-gradient(160deg,#2C1810 0%,#4A1C2C 50%,#C8553D 100%)';this.removeAttribute('src')"
+    />
+    <div class="hero-overlay"></div>
+    <div class="hero-blur"></div>
+
+    <!-- SVG stroke reveal -->
+    <div class="hero-svg">
+      <svg class="hero-svg-el" width="100%" height="100%" viewBox="0 0 840 880" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <mask id="stroke-reveal-mask">
+            <path class="stroke-reveal-path"
+              fill="none" stroke="white" stroke-width="180"
+              stroke-linecap="round" stroke-linejoin="round"
+              d="M 70 0 C 90 260 350 15 490 175 C 630 335 570 10 740 160 C 910 310 780 215 640 280 C 500 345 240 240 360 395 C 480 550 640 295 720 435 C 800 575 530 515 490 435 C 450 355 200 605 310 720 C 420 835 150 685 170 580 C 190 475 310 835 410 720"
+            />
+          </mask>
+        </defs>
+        <image href="images/hero-bg.jpg" x="-5%" y="-5%" width="110%" height="110%"
+          preserveAspectRatio="xMidYMid slice" mask="url(#stroke-reveal-mask)" />
+      </svg>
+    </div>
+
+    <div class="hero-content">
+      <h1 class="hero-title">sabr & sips</h1>
+      <p class="hero-tagline">Patience in Every Sip</p>
+      <p class="hero-desc">A pop-up cafe bringing people together over premium matcha, artisanal coffee, refreshing mocktails, and curated plant-based bites.</p>
+      <div class="hero-ctas">
+        <a href="#book-us" class="btn-primary" onclick="smoothScroll(event,'#book-us')">Inquire for Events</a>
+        <a href="#find-us" class="btn-secondary" onclick="smoothScroll(event,'#find-us')">Find Our Pop-Up</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Marquee ─── -->
+  <div class="marquee-bar" aria-hidden="true">
+    <div class="marquee-track">
+      <!-- 12 items (duplicated for seamless loop) -->
+      <span class="marquee-item">Drink. Pause. Repeat.<span class="marquee-dot">●</span></span>
+      <span class="marquee-item">Drink. Pause. Repeat.<span class="marquee-dot">●</span></span>
+      <span class="marquee-item">Drink. Pause. Repeat.<span class="marquee-dot">●</span></span>
+      <span class="marquee-item">Drink. Pause. Repeat.<span class="marquee-dot">●</span></span>
+      <span class="marquee-item">Drink. Pause. Repeat.<span class="marquee-dot">●</span></span>
+      <span class="marquee-item">Drink. Pause. Repeat.<span class="marquee-dot">●</span></span>
+      <span class="marquee-item">Drink. Pause. Repeat.<span class="marquee-dot">●</span></span>
+      <span class="marquee-item">Drink. Pause. Repeat.<span class="marquee-dot">●</span></span>
+      <span class="marquee-item">Drink. Pause. Repeat.<span class="marquee-dot">●</span></span>
+      <span class="marquee-item">Drink. Pause. Repeat.<span class="marquee-dot">●</span></span>
+      <span class="marquee-item">Drink. Pause. Repeat.<span class="marquee-dot">●</span></span>
+      <span class="marquee-item">Drink. Pause. Repeat.<span class="marquee-dot">●</span></span>
+    </div>
+  </div>
+
+  <!-- ─── Features ─── -->
+  <section id="features">
+    <div class="features-grid">
+      <div class="animate-in">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C8553D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0L12 2.69z"/>
+          </svg>
         </div>
-    </nav>
-
-    <section class="hero" id="home">
-        <h1 class="logo-text">sabr & sips</h1>
-        <div class="tagline">Patience in Every Sip</div>
-        <p>A pop-up cafe bringing people together over premium matcha, artisanal coffee, refreshing mocktails, and curated plant-based bites.</p>
-        <div>
-            <a href="#book" class="btn-primary">Inquire for Events</a>
-            <a href="#events" class="btn-secondary">Find Our Pop-Up</a>
+        <h3 class="feature-title">Mindful Ingredients</h3>
+        <p class="feature-desc">From ceremonial grade matcha to ethically sourced beans, we pour intention into every single cup.</p>
+      </div>
+      <div class="animate-in">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C8553D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22c4.97 0 9-3.58 9-8 0-3.38-2.42-5.67-5-7.17C13.5 5.5 12.5 3 12 2c-.5 1-1.5 3.5-4 4.83C5.42 8.33 3 10.62 3 14c0 4.42 4.03 8 9 8z"/>
+            <path d="M12 22V10"/>
+          </svg>
         </div>
-    </section>
-
-    <section id="story">
-        <h2 class="section-title">Our Story</h2>
-        <div class="brand-story">
-            <p>There's a kind of coffee shop that doesn't exist much in the West. The kind where you sit for hours, where the coffee is an excuse to stay, where no one is rushing you out the door. I grew up knowing that feeling — through Balkan coffee culture, through the way people gather, linger, and actually talk. That slowness wasn't laziness. It was intention.</p>
-            
-            <p><em>Sabr</em> is an Arabic word meaning patience. It traveled into the Albanian language through Islam, woven into our everyday speech, our prayers, our way of moving through hard things. I wanted to bring it back — not as something heavy or religious, but as an invitation. A reminder that slowing down is its own kind of strength.</p>
-            
-            <p>Sabr & Sips was born from that. A space where the drink in your hand is just the beginning. Where you're allowed to take up time, take up space, and just be. No rush. No guilt. Just good drinks, good company, and a little patience with yourself.</p>
-            
-            <div class="sign-off">Drink. Pause. Repeat.</div>
+        <h3 class="feature-title">Plant-Based Perfection</h3>
+        <p class="feature-desc">100% plant-based food catering designed to nourish. We handle the dietary restrictions so you don't have to.</p>
+      </div>
+      <div class="animate-in">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C8553D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 3h12l4 6-10 13L2 9l4-6z"/>
+            <path d="M12 22V9"/><path d="M2 9h20"/>
+          </svg>
         </div>
-    </section>
+        <h3 class="feature-title">Curated Aesthetics</h3>
+        <p class="feature-desc">A minimalist, luxurious mobile setup that elevates the design and atmosphere of your intimate event.</p>
+      </div>
+    </div>
+  </section>
 
-    <section>
-        <div class="values-grid">
-            <div class="value-item">
-                <h4>Mindful Ingredients</h4>
-                <p>From ceremonial grade matcha to ethically sourced beans, we pour intention into every single cup.</p>
-            </div>
-            <div class="value-item">
-                <h4>Plant-Based Perfection</h4>
-                <p>100% plant-based food catering designed to nourish. We handle the dietary restrictions so you don't have to.</p>
-            </div>
-            <div class="value-item">
-                <h4>Curated Aesthetics</h4>
-                <p>A minimalist, luxurious mobile setup that elevates the design and atmosphere of your intimate event.</p>
-            </div>
+  <!-- ─── Our Story ─── -->
+  <section id="our-story">
+    <div class="story-inner">
+      <div class="story-text">
+        <div class="section-label animate-in">Our Story</div>
+        <h2 class="story-h2 animate-in">There's a kind of coffee shop that doesn't exist much in the West.</h2>
+        <p class="story-p animate-in">The kind where you sit for hours, where the coffee is an excuse to stay, where no one is rushing you out the door. I grew up knowing that feeling — through Balkan coffee culture, through the way people gather, linger, and actually talk. That slowness wasn't laziness. It was intention.</p>
+        <p class="story-p animate-in"><strong class="story-accent">Sabr</strong> is an Arabic word meaning patience. It traveled into the Albanian language through Islam, woven into our everyday speech, our prayers, our way of moving through hard things. I wanted to bring it back — not as something heavy or religious, but as an invitation. A reminder that slowing down is its own kind of strength.</p>
+        <p class="story-p animate-in">Sabr & Sips was born from that. A space where the drink in your hand is just the beginning. Where you're allowed to take up time, take up space, and just be. No rush. No guilt. Just good drinks, good company, and a little patience with yourself.</p>
+        <blockquote class="story-blockquote animate-in">Drink. Pause. Repeat.</blockquote>
+      </div>
+      <div class="story-img-col animate-in">
+        <!-- Replace src with your actual photo -->
+        <img
+          class="story-photo"
+          src="images/story-founder.jpg"
+          alt="Enjoying Turkish coffee"
+          onerror="this.outerHTML='<div class=\'story-photo img-placeholder\'>add&nbsp;story-founder.jpg</div>'"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Menu ─── -->
+  <section id="menu">
+    <div class="menu-inner">
+      <h2 class="menu-h2 animate-in">What We Pour</h2>
+      <div class="menu-grid">
+        <!-- Matcha -->
+        <div class="menu-card animate-in">
+          <div class="menu-card-img-wrap">
+            <img class="menu-card-img" src="images/menu-matcha.jpg" alt="Matcha"
+              onerror="this.outerHTML='<div class=\'menu-card-img img-placeholder\' style=\'width:100%;height:100%\'>menu-matcha.jpg</div>'"
+              loading="lazy"/>
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-title">Matcha</h3>
+            <p class="menu-card-desc">Ceremonial grade and thoughtfully prepared. Experience the vibrant energy of our signature iced oat matcha latte or the delicate notes of our rose matcha.</p>
+            <span class="menu-card-tag">Signature Drinks</span>
+          </div>
         </div>
-    </section>
-
-    <section id="menu">
-        <h2 class="section-title">What We Pour</h2>
-        <div class="menu-grid">
-            <div class="menu-item">
-                <h3>Matcha</h3>
-                <p>Ceremonial grade and thoughtfully prepared. Experience the vibrant energy of our signature iced oat matcha latte or the delicate notes of our rose matcha.</p>
-            </div>
-            <div class="menu-item">
-                <h3>Coffee</h3>
-                <p>Ethically sourced beans, brewed to perfection. Whether you are craving a creamy, comforting latte or an authentic, slow-brewed Turkish coffee.</p>
-            </div>
-            <div class="menu-item">
-                <h3>Mocktails</h3>
-                <p>Botanical, refreshing, and complex. Hand-crafted using our own homemade syrups to elevate your afternoon with vibrant, alcohol-free flavors.</p>
-            </div>
+        <!-- Coffee -->
+        <div class="menu-card animate-in">
+          <div class="menu-card-img-wrap">
+            <img class="menu-card-img" src="images/menu-coffee.jpg" alt="Coffee"
+              onerror="this.outerHTML='<div class=\'menu-card-img img-placeholder\' style=\'width:100%;height:100%\'>menu-coffee.jpg</div>'"
+              loading="lazy"/>
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-title">Coffee</h3>
+            <p class="menu-card-desc">Ethically sourced beans, brewed to perfection. Whether you are craving a creamy, comforting latte or an authentic, slow-brewed Turkish coffee.</p>
+            <span class="menu-card-tag">Signature Drinks</span>
+          </div>
         </div>
-    </section>
-
-    <section id="catering">
-        <div class="catering-wrapper">
-            <h2 class="section-title" style="margin-bottom: 1.5rem;">Plant-Based Event Catering</h2>
-            <p style="font-size: 1.1rem; margin-bottom: 2rem;">
-                Beyond beverages, we offer fully plant-based food catering (vegan, gluten-free, nut-free, etc.). We are happy to accommodate any dietary restrictions to ensure all your guests are taken care of. 
-            </p>
-            <h4 style="font-size: 1.2rem; text-transform: uppercase; letter-spacing: 1px;">Ideal For:</h4>
-            <p style="color: var(--dark-plum);">Intimate Gatherings • Private Celebrations • Boutique Pop-Ups • Small Venues</p>
-            <br>
-            <a href="#book" class="btn-primary">Request a Custom Menu</a>
+        <!-- Mocktails — wide -->
+        <div class="menu-card menu-card-wide animate-in">
+          <div class="menu-card-wide-inner">
+            <div class="menu-card-img-wrap">
+              <img class="menu-card-img" src="images/menu-mocktail.jpg" alt="Mocktails"
+                onerror="this.outerHTML='<div class=\'menu-card-img img-placeholder\' style=\'width:100%;height:100%\'>menu-mocktail.jpg</div>'"
+                loading="lazy"/>
+            </div>
+            <div class="menu-card-body">
+              <h3 class="menu-card-title">Mocktails</h3>
+              <p class="menu-card-desc">Botanical, refreshing, and complex. Hand-crafted using our own homemade syrups to elevate your afternoon with vibrant, alcohol-free flavors.</p>
+              <span class="menu-card-tag">Signature Drinks</span>
+            </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section id="events" class="events-banner">
-        <h2 class="section-title" style="margin-bottom: 0;">Where to Find Us Next</h2>
-        <p style="font-size: 1.5rem; margin-top: 1rem;">Coming Soon</p>
-        <p style="margin-top: 1rem;"><em>Check our Instagram for future locations and dates!</em></p>
-    </section>
+  <!-- ─── Catering ─── -->
+  <section id="catering">
+    <div class="catering-inner">
+      <div class="section-label animate-in" style="justify-content:center;">Catering</div>
+      <h2 class="catering-h2 animate-in">Plant-Based Event Catering</h2>
+      <p class="catering-p animate-in">Beyond beverages, we offer fully plant-based food catering (vegan, gluten-free, nut-free, etc.). We are happy to accommodate any dietary restrictions to ensure all your guests are taken care of.</p>
+      <p class="catering-ideal-label animate-in">Ideal For:</p>
+      <p class="catering-ideal animate-in">Intimate Gatherings • Private Celebrations • Boutique Pop-Ups • Small Venues</p>
+      <a href="#book-us" class="btn-dark animate-in" onclick="smoothScroll(event,'#book-us')">Request a Custom Menu</a>
+    </div>
+  </section>
 
-    <section id="book">
-        <h2 class="section-title">Inquire About Your Event</h2>
-        <p style="text-align: center; margin-bottom: 3rem;">Ready to bring the Sabr & Sips experience to your next gathering? Fill out the form below or send us a DM on Instagram.</p>
-        
-        <form class="contact-form">
-            <input type="text" placeholder="Name" required>
-            <input type="email" placeholder="Email Address" required>
-            <input type="text" placeholder="Event Type & Estimated Guest Count">
-            <textarea placeholder="Tell us about your vision, date, and any dietary requirements..."></textarea>
-            <button type="submit" class="btn-primary" style="width: 100%; border: none; cursor: pointer;">Send Inquiry</button>
-        </form>
-    </section>
+  <!-- ─── Find Us ─── -->
+  <section id="find-us">
+    <div class="findus-inner">
+      <div class="findus-text">
+        <h2 class="findus-h2 animate-in">Where to Find Us Next</h2>
+        <p class="findus-coming animate-in">Coming Soon</p>
+        <p class="findus-p animate-in">Check our Instagram for future locations and dates! We pop up at intimate gatherings, private celebrations, boutique events, and small venues across Chicago.</p>
+        <a href="https://instagram.com/sabrandsips" target="_blank" rel="noopener noreferrer" class="findus-ig animate-in">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          </svg>
+          @sabrandsips
+        </a>
+      </div>
+      <div class="findus-img-col animate-in">
+        <img class="findus-img" src="images/findus-setup.jpg" alt="Sabr & Sips pop-up setup"
+          onerror="this.outerHTML='<div class=\'findus-img img-placeholder\' style=\'height:300px;border-radius:8px\'>add&nbsp;findus-setup.jpg</div>'"
+          loading="lazy"/>
+        <div class="findus-badge">Next Pop-Up: TBA</div>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <h2 style="font-weight: 300; margin-top: 0;">sabr & sips</h2>
-        <p>Based in Chicago, IL</p>
-        <p>Follow us on Instagram: <a href="https://instagram.com/sabrandsips" target="_blank">@sabrandsips</a></p>
-        <p style="margin-top: 3rem; font-size: 0.8rem; opacity: 0.7;">© 2026 Sabr & Sips. All rights reserved.</p>
-    </footer>
+  <!-- ─── Contact / Book Us ─── -->
+  <section id="book-us">
+    <div class="contact-inner">
+      <h2 class="contact-h2 animate-in">Inquire About Your Event</h2>
+      <p class="contact-p animate-in">Ready to bring the Sabr & Sips experience to your next gathering? Fill out the form below or send us a DM on Instagram.</p>
 
+      <div class="contact-success" id="contact-success">
+        <p class="contact-success-title">Thank you!</p>
+        <p class="contact-success-p">We've received your inquiry and will be in touch soon.</p>
+      </div>
+
+      <form class="contact-form animate-in" id="contact-form" onsubmit="handleSubmit(event)">
+        <input type="text" name="name" placeholder="Name" required class="form-input" />
+        <input type="email" name="email" placeholder="Email Address" required class="form-input" />
+        <input type="text" name="eventType" placeholder="Event Type & Estimated Guest Count" required class="form-input" />
+        <textarea name="message" placeholder="Tell us about your vision, date, and any dietary requirements..." rows="4" required class="form-input"></textarea>
+        <button type="submit" class="btn-dark" style="width:100%;padding:16px;font-family:'Inter',sans-serif;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;border:none;">Send Inquiry</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ─── Footer ─── -->
+  <footer>
+    <p class="footer-logo">sabr & sips</p>
+    <p class="footer-location">Based in Chicago, IL</p>
+    <p class="footer-ig">Follow us on Instagram: <a href="https://instagram.com/sabrandsips" target="_blank" rel="noopener noreferrer">@sabrandsips</a></p>
+    <p class="footer-copy">© 2025 Sabr & Sips. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // ─── Hero animation sequence ───
+    const hero = document.getElementById('hero');
+    setTimeout(() => {
+      hero.classList.add('drawing');
+      setTimeout(() => {
+        hero.classList.add('revealed');
+      }, 3500);
+    }, 500);
+
+    // ─── Nav scroll behavior ───
+    window.addEventListener('scroll', () => {
+      document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 100);
+    }, { passive: true });
+
+    // ─── Hamburger ───
+    let mobileOpen = false;
+    document.getElementById('hamburger').addEventListener('click', () => {
+      mobileOpen = !mobileOpen;
+      const overlay = document.getElementById('mobile-overlay');
+      const h1 = document.getElementById('ham1');
+      const h2 = document.getElementById('ham2');
+      overlay.classList.toggle('open', mobileOpen);
+      h1.style.transform = mobileOpen ? 'rotate(45deg) translateY(3.75px)' : 'none';
+      h2.style.transform = mobileOpen ? 'rotate(-45deg) translateY(-3.75px)' : 'none';
+    });
+    function closeMobile() {
+      mobileOpen = false;
+      document.getElementById('mobile-overlay').classList.remove('open');
+      document.getElementById('ham1').style.transform = 'none';
+      document.getElementById('ham2').style.transform = 'none';
+    }
+
+    // ─── Smooth scroll ───
+    function smoothScroll(e, selector) {
+      e.preventDefault();
+      const target = document.querySelector(selector);
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // ─── Scroll-triggered animations ───
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.animate-in').forEach(el => io.observe(el));
+
+    // ─── Contact form ───
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.getElementById('contact-form').style.display = 'none';
+      const success = document.getElementById('contact-success');
+      success.classList.add('visible');
+      success.style.display = 'block';
+    }
+  </script>
 </body>
 </html>
