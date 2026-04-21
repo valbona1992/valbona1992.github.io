@@ -542,50 +542,47 @@
       margin-bottom: 24px;
     }
     
-    /* Experiences & Pricing Split */
-    .catering-split {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 60px;
-      margin-bottom: 80px;
-    }
-    .catering-details {
-      flex: 1;
-      min-width: 300px;
+    /* Experiences (Centered, no pricing card) */
+    .catering-details-wrapper {
+      max-width: 800px;
+      margin: 0 auto 80px auto;
+      text-align: center;
     }
     .catering-details h3 {
       font-family: 'DM Serif Display', serif;
-      font-size: 1.8rem;
+      font-size: 2.2rem;
       color: var(--wine);
       margin-bottom: 24px;
     }
     .catering-details p {
-      font-size: 1rem;
+      font-size: 1.05rem;
       line-height: 1.7;
       color: var(--body);
-      margin-bottom: 24px;
+      margin-bottom: 32px;
     }
     .catering-list {
       list-style: none;
       padding: 0;
-      margin-bottom: 32px;
+      margin: 0 auto 40px auto;
+      display: inline-block;
+      text-align: left;
     }
     .catering-list li {
       position: relative;
-      padding-left: 32px;
+      padding-left: 36px;
       margin-bottom: 16px;
-      font-size: 0.95rem;
+      font-size: 1.05rem;
       color: var(--body);
     }
     .catering-list li::before {
       content: '✓';
       position: absolute;
       left: 0;
-      color: var(--wine);
+      color: var(--terracotta);
       font-weight: bold;
     }
     .catering-details-footer {
-      font-size: 0.95rem;
+      font-size: 1rem;
       font-style: italic;
       color: var(--muted);
     }
@@ -593,47 +590,6 @@
       color: var(--wine);
       text-decoration: underline;
       font-weight: 500;
-    }
-    
-    /* Pricing Card */
-    .pricing-card {
-      flex: 1;
-      min-width: 300px;
-      background-color: var(--wine);
-      color: var(--white);
-      padding: 48px;
-      border-radius: 8px;
-      box-shadow: 0 10px 30px rgba(74, 28, 44, 0.1);
-    }
-    .pricing-card h3 {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.8rem;
-      color: var(--white);
-      margin-bottom: 16px;
-    }
-    .pricing-card > p {
-      font-size: 0.95rem;
-      color: rgba(255,255,255,0.85);
-      margin-bottom: 32px;
-    }
-    .pricing-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 32px;
-    }
-    .pricing-table td {
-      padding: 16px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.15);
-      font-size: 0.95rem;
-    }
-    .pricing-table tr:last-child td { border-bottom: none; }
-    .pricing-table td:last-child { text-align: right; font-weight: 500; }
-    .pricing-lead-time {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.7);
-      border-top: 1px solid rgba(255,255,255,0.15);
-      padding-top: 24px;
-      line-height: 1.6;
     }
 
     /* Who We Serve */
@@ -674,4 +630,135 @@
       object-fit: cover;
       border-radius: 4px;
       margin-bottom: 24px;
-      background-color: var(--
+      background-color: var(--white);
+    }
+    .serve-card p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--body);
+    }
+
+    /* Custom Packages */
+    .custom-packages {
+      background-color: var(--footer);
+      color: var(--cream);
+      padding: 64px clamp(24px, 5vw, 64px);
+      border-radius: 8px;
+    }
+    .custom-packages h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.2rem;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+    .custom-packages > p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: rgba(247, 243, 238, 0.9);
+      margin-bottom: 32px;
+    }
+    .custom-packages ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 32px;
+    }
+    .custom-packages li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 20px;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+    .custom-packages li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      font-size: 1.5rem;
+      line-height: 1;
+      top: -2px;
+      color: var(--terracotta);
+    }
+    .custom-packages strong {
+      color: var(--white);
+      font-weight: 500;
+    }
+    @media (max-width: 768px) {
+      .who-we-serve, .custom-packages { padding: 40px 24px; }
+    }
+
+    /* ─── Find Us ─── */
+    #find-us {
+      background-color: var(--cream);
+      padding: clamp(60px, 7vw, 100px) clamp(1.5rem, 5vw, 4rem);
+    }
+    .findus-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: clamp(40px, 5vw, 80px);
+    }
+    .findus-text { flex: 40; }
+    .findus-img-col { flex: 60; position: relative; }
+    .findus-h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      color: var(--wine);
+      margin-bottom: 12px;
+    }
+    .findus-coming {
+      font-weight: 400;
+      font-size: 1.1rem;
+      color: var(--terracotta);
+      margin-bottom: 16px;
+    }
+    .findus-p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--body);
+      margin-bottom: 24px;
+    }
+    .findus-ig {
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: var(--wine);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.3s ease;
+    }
+    .findus-ig:hover { color: var(--terracotta); }
+    .findus-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      border-radius: 8px;
+      background-color: #d6ccc2;
+      display: block;
+    }
+    .findus-badge {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      background-color: rgba(74, 28, 44, 0.9);
+      color: var(--cream);
+      padding: 8px 16px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ─── FAQ Section ─── */
+    #faq {
+      background-color: var(--white);
+      padding: clamp(60px, 7vw, 100px) clamp(1.5rem, 5vw, 4rem);
+    }
+    .faq-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .faq-h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      color: var(--wine);
+      text-align: center;
