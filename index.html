@@ -567,4 +567,737 @@
     .who-we-serve h3 {
       font-family: 'DM Serif Display', serif;
       font-size: 2.2rem;
-      color: var(--
+      color: var(--wine);
+      margin-bottom: 16px;
+    }
+    .who-we-serve > p {
+      color: var(--body);
+      margin-bottom: 48px;
+      font-size: 1.05rem;
+    }
+    .serve-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 32px;
+      text-align: left;
+    }
+    .serve-card h4 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--wine);
+      margin-bottom: 16px;
+    }
+    .serve-card-img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border-radius: 4px;
+      margin-bottom: 24px;
+      background-color: var(--white);
+    }
+    .serve-card p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--body);
+    }
+
+    /* Custom Packages */
+    .custom-packages {
+      background-color: var(--footer);
+      color: var(--cream);
+      padding: 64px clamp(24px, 5vw, 64px);
+      border-radius: 8px;
+    }
+    .custom-packages h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.2rem;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+    .custom-packages > p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: rgba(247, 243, 238, 0.9);
+      margin-bottom: 32px;
+    }
+    .custom-packages ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 32px;
+    }
+    .custom-packages li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 20px;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+    .custom-packages li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      font-size: 1.5rem;
+      line-height: 1;
+      top: -2px;
+      color: var(--terracotta);
+    }
+    .custom-packages strong {
+      color: var(--white);
+      font-weight: 500;
+    }
+    @media (max-width: 768px) {
+      .who-we-serve, .custom-packages { padding: 40px 24px; }
+    }
+
+    /* ─── Find Us ─── */
+    #find-us {
+      background-color: var(--cream);
+      padding: clamp(60px, 7vw, 100px) clamp(1.5rem, 5vw, 4rem);
+    }
+    .findus-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: clamp(40px, 5vw, 80px);
+    }
+    .findus-text { flex: 40; }
+    .findus-img-col { flex: 60; position: relative; }
+    .findus-h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      color: var(--wine);
+      margin-bottom: 12px;
+    }
+    .findus-coming {
+      font-weight: 400;
+      font-size: 1.1rem;
+      color: var(--terracotta);
+      margin-bottom: 16px;
+    }
+    .findus-p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--body);
+      margin-bottom: 24px;
+    }
+    .findus-ig {
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: var(--wine);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.3s ease;
+    }
+    .findus-ig:hover { color: var(--terracotta); }
+    .findus-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      border-radius: 8px;
+      background-color: #d6ccc2;
+      display: block;
+    }
+    .findus-badge {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      background-color: rgba(74, 28, 44, 0.9);
+      color: var(--cream);
+      padding: 8px 16px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ─── FAQ Section ─── */
+    #faq {
+      background-color: var(--white);
+      padding: clamp(60px, 7vw, 100px) clamp(1.5rem, 5vw, 4rem);
+    }
+    .faq-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .faq-h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      color: var(--wine);
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .faq-accordion {
+      border-top: 1px solid rgba(74, 28, 44, 0.15);
+    }
+    .faq-item {
+      border-bottom: 1px solid rgba(74, 28, 44, 0.15);
+    }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 24px 0;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 1.05rem;
+      color: var(--wine);
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: color 0.3s ease;
+    }
+    .faq-question:hover {
+      color: var(--terracotta);
+    }
+    .faq-icon {
+      font-size: 1.5rem;
+      font-weight: 300;
+      transition: transform 0.3s ease;
+    }
+    .faq-question.active .faq-icon {
+      transform: rotate(45deg);
+      color: var(--terracotta);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-out, padding 0.4s ease;
+    }
+    .faq-answer p {
+      padding-bottom: 24px;
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--body);
+      font-weight: 300;
+    }
+
+    /* ─── Contact ─── */
+    #book-us {
+      background-color: var(--cream);
+      padding: clamp(60px, 8vw, 120px) clamp(1.5rem, 5vw, 4rem);
+    }
+    .contact-inner {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .contact-h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      color: var(--wine);
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .contact-p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--body);
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .form-input {
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      font-size: 0.95rem;
+      color: var(--wine);
+      border: 1px solid rgba(74, 28, 44, 0.2);
+      background-color: var(--white);
+      padding: 14px 16px;
+      width: 100%;
+      outline: none;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .form-input::placeholder { color: #A99B8F; }
+    .form-input:focus {
+      border-color: var(--terracotta);
+      box-shadow: 0 0 0 3px rgba(200, 85, 61, 0.1);
+    }
+    textarea.form-input { resize: vertical; }
+    .contact-success {
+      background-color: var(--white);
+      padding: 40px 32px;
+      text-align: center;
+      display: none;
+    }
+    .contact-success.visible { display: block; }
+    .contact-success-title {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.5rem;
+      color: var(--wine);
+      margin-bottom: 12px;
+    }
+    .contact-success-p {
+      font-size: 1rem;
+      color: var(--body);
+    }
+
+    /* ─── Footer ─── */
+    footer {
+      background-color: var(--footer);
+      padding: 60px clamp(1.5rem, 5vw, 4rem);
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.25rem;
+      color: var(--cream);
+      margin-bottom: 12px;
+    }
+    .footer-location {
+      font-weight: 300;
+      font-size: 0.85rem;
+      color: rgba(247, 243, 238, 0.6);
+      margin-bottom: 16px;
+    }
+    .footer-ig {
+      font-size: 0.85rem;
+      color: var(--cream);
+    }
+    .footer-ig a {
+      color: var(--cream);
+      transition: color 0.3s ease;
+    }
+    .footer-ig a:hover { color: var(--terracotta); }
+    .footer-copy {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      color: rgba(247, 243, 238, 0.4);
+      margin-top: 32px;
+    }
+
+    /* ─── Placeholder image fallback ─── */
+    .img-placeholder {
+      background: linear-gradient(135deg, #d6ccc2 0%, #c4b5a8 50%, #b5a090 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(74,28,44,0.3);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .features-grid { grid-template-columns: 1fr; }
+      .story-inner { flex-direction: column; }
+      .menu-grid { grid-template-columns: 1fr; }
+      .menu-card-wide { grid-column: span 1; }
+      .menu-card-wide .menu-card-wide-inner { flex-direction: column; }
+      .findus-inner { flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .animate-marquee { animation: none; }
+      .animate-in { opacity: 1; transform: none; transition: none; }
+    }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="main-nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">sabr & sips</a>
+      <div class="nav-links">
+        <a href="#our-story" class="nav-link" onclick="smoothScroll(event,'#our-story')">Our Story</a>
+        <a href="#menu" class="nav-link" onclick="smoothScroll(event,'#menu')">Menu</a>
+        <a href="#catering" class="nav-link" onclick="smoothScroll(event,'#catering')">Catering</a>
+        <a href="#book-us" class="nav-link nav-link-btn" onclick="smoothScroll(event,'#book-us')">Book Us</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span id="ham1"></span>
+        <span id="ham2"></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-overlay" id="mobile-overlay">
+    <a href="#our-story" class="mobile-nav-link" onclick="closeMobile();smoothScroll(event,'#our-story')">Our Story</a>
+    <a href="#menu" class="mobile-nav-link" onclick="closeMobile();smoothScroll(event,'#menu')">Menu</a>
+    <a href="#catering" class="mobile-nav-link" onclick="closeMobile();smoothScroll(event,'#catering')">Catering</a>
+    <a href="#book-us" class="mobile-nav-link btn-style nav-link" onclick="closeMobile();smoothScroll(event,'#book-us')">Book Us</a>
+  </div>
+
+  <section id="hero">
+    <img
+      class="hero-bg"
+      src="images/hero-bg.jpg"
+      alt="Sabr & Sips — Turkish coffee preparation"
+      onerror="this.style.background='linear-gradient(160deg,#2C1810 0%,#4A1C2C 50%,#C8553D 100%)';this.removeAttribute('src')"
+    />
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <h1 class="hero-title">sabr & sips</h1>
+      <p class="hero-tagline">Patience in Every Sip</p>
+      <p class="hero-desc">A pop-up cafe bringing people together over premium matcha, artisanal coffee, refreshing mocktails, and curated plant-based bites.</p>
+      <div class="hero-ctas">
+        <a href="#book-us" class="btn-primary" onclick="smoothScroll(event,'#book-us')">Inquire for Events</a>
+        <a href="#find-us" class="btn-secondary" onclick="smoothScroll(event,'#find-us')">Find Our Pop-Up</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee-bar" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="marquee-item">Drink. Pause. Repeat.<span class="marquee-dot">●</span></span>
+      <span class="marquee-item">Drink. Pause. Repeat.<span class="marquee-dot">●</span></span>
+      <span class="marquee-item">Drink. Pause. Repeat.<span class="marquee-dot">●</span></span>
+      <span class="marquee-item">Drink. Pause. Repeat.<span class="marquee-dot">●</span></span>
+      <span class="marquee-item">Drink. Pause. Repeat.<span class="marquee-dot">●</span></span>
+      <span class="marquee-item">Drink. Pause. Repeat.<span class="marquee-dot">●</span></span>
+      <span class="marquee-item">Drink. Pause. Repeat.<span class="marquee-dot">●</span></span>
+      <span class="marquee-item">Drink. Pause. Repeat.<span class="marquee-dot">●</span></span>
+      <span class="marquee-item">Drink. Pause. Repeat.<span class="marquee-dot">●</span></span>
+      <span class="marquee-item">Drink. Pause. Repeat.<span class="marquee-dot">●</span></span>
+      <span class="marquee-item">Drink. Pause. Repeat.<span class="marquee-dot">●</span></span>
+      <span class="marquee-item">Drink. Pause. Repeat.<span class="marquee-dot">●</span></span>
+    </div>
+  </div>
+
+  <section id="our-story">
+    <div class="story-inner">
+      <div class="story-text">
+        <div class="section-label animate-in">Our Story</div>
+        <h2 class="story-h2 animate-in">There's a kind of coffee shop that doesn't exist much in the West.</h2>
+        <p class="story-p animate-in">The kind where you sit for hours, where the coffee is an excuse to stay, where no one is rushing you out the door. I grew up knowing that feeling — through Balkan coffee culture, through the way people gather, linger, and actually talk. That slowness wasn't laziness. It was intention.</p>
+        <p class="story-p animate-in"><strong class="story-accent">Sabr</strong> is an Arabic word meaning patience. It traveled into the Albanian language through Islam, woven into our everyday speech, our prayers, our way of moving through hard things. I wanted to bring it back — not as something heavy or religious, but as an invitation. A reminder that slowing down is its own kind of strength.</p>
+        <p class="story-p animate-in">Sabr & Sips was born from that. A space where the drink in your hand is just the beginning. Where you're allowed to take up time, take up space, and just be. No rush. No guilt. Just good drinks, good company, and a little patience with yourself.</p>
+        <blockquote class="story-blockquote animate-in">Drink. Pause. Repeat.</blockquote>
+      </div>
+      <div class="story-img-col animate-in">
+        <img
+          class="story-photo"
+          src="images/story-founder.jpg"
+          alt="Enjoying Turkish coffee"
+          onerror="this.outerHTML='<div class=\'story-photo img-placeholder\'>add&nbsp;story-founder.jpg</div>'"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="features-grid">
+      <div class="animate-in">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C8553D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0L12 2.69z"/>
+          </svg>
+        </div>
+        <h3 class="feature-title">Mindful Ingredients</h3>
+        <p class="feature-desc">From ceremonial grade matcha to ethically sourced beans, we pour intention into every single cup.</p>
+      </div>
+      <div class="animate-in">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C8553D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22c4.97 0 9-3.58 9-8 0-3.38-2.42-5.67-5-7.17C13.5 5.5 12.5 3 12 2c-.5 1-1.5 3.5-4 4.83C5.42 8.33 3 10.62 3 14c0 4.42 4.03 8 9 8z"/>
+            <path d="M12 22V10"/>
+          </svg>
+        </div>
+        <h3 class="feature-title">Plant-Based Perfection</h3>
+        <p class="feature-desc">100% plant-based food catering designed to nourish. We handle the dietary restrictions so you don't have to.</p>
+      </div>
+      <div class="animate-in">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C8553D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 3h12l4 6-10 13L2 9l4-6z"/>
+            <path d="M12 22V9"/><path d="M2 9h20"/>
+          </svg>
+        </div>
+        <h3 class="feature-title">Curated Aesthetics</h3>
+        <p class="feature-desc">A minimalist, luxurious mobile setup that elevates the design and atmosphere of your intimate event.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu">
+    <div class="menu-inner">
+      <h2 class="menu-h2 animate-in">What We Pour</h2>
+      <div class="menu-grid">
+        <div class="menu-card animate-in">
+          <div class="menu-card-img-wrap">
+            <img class="menu-card-img" src="images/menu-matcha.jpg" alt="Matcha"
+              onerror="this.outerHTML='<div class=\'menu-card-img img-placeholder\' style=\'width:100%;height:100%\'>menu-matcha.jpg</div>'"
+              loading="lazy"/>
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-title">Matcha</h3>
+            <p class="menu-card-desc">Ceremonial grade and thoughtfully prepared. Experience the vibrant energy of our signature iced oat matcha latte or the delicate notes of our rose matcha.</p>
+            <span class="menu-card-tag">Signature Drinks</span>
+          </div>
+        </div>
+        <div class="menu-card animate-in">
+          <div class="menu-card-img-wrap">
+            <img class="menu-card-img" src="images/menu-coffee.jpg" alt="Coffee"
+              onerror="this.outerHTML='<div class=\'menu-card-img img-placeholder\' style=\'width:100%;height:100%\'>menu-coffee.jpg</div>'"
+              loading="lazy"/>
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-title">Coffee</h3>
+            <p class="menu-card-desc">Ethically sourced beans, brewed to perfection. Whether you are craving a creamy, comforting latte or an authentic, slow-brewed Turkish coffee.</p>
+            <span class="menu-card-tag">Signature Drinks</span>
+          </div>
+        </div>
+        <div class="menu-card menu-card-wide animate-in">
+          <div class="menu-card-wide-inner">
+            <div class="menu-card-img-wrap">
+              <img class="menu-card-img" src="images/menu-mocktail.jpg" alt="Mocktails"
+                onerror="this.outerHTML='<div class=\'menu-card-img img-placeholder\' style=\'width:100%;height:100%\'>menu-mocktail.jpg</div>'"
+                loading="lazy"/>
+            </div>
+            <div class="menu-card-body">
+              <h3 class="menu-card-title">Mocktails</h3>
+              <p class="menu-card-desc">Botanical, refreshing, and complex. Hand-crafted using our own homemade syrups to elevate your afternoon with vibrant, alcohol-free flavors.</p>
+              <span class="menu-card-tag">Signature Drinks</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="catering">
+    <div class="catering-inner">
+      
+      <div class="catering-header animate-in">
+        <div class="section-label catering-label" style="justify-content:center;">Catering</div>
+        <h2 class="catering-h2">Plant-Based Event Catering</h2>
+      </div>
+
+      <div class="catering-details-wrapper animate-in">
+        <div class="catering-details">
+          <h3>Elevated Experiences, Custom Menus</h3>
+          <p>We don't just serve drinks and snacks — we create complete sensory experiences tailored to your event. Every menu is custom-designed around your vision, dietary needs, and aesthetic preferences.</p>
+          <ul class="catering-list">
+            <li>100% plant-based, vegan & gluten-free options</li>
+            <li>Nut-free & allergy-friendly menus available</li>
+            <li>Custom specialty drink recipes & seasonal syrups</li>
+            <li>Artisanal pastries & baked goods</li>
+            <li>Aesthetic table design & curated setup</li>
+            <li>Intimate to medium-sized gatherings</li>
+          </ul>
+          <p class="catering-details-footer">Let's discuss your vision. <a href="#book-us" onclick="smoothScroll(event,'#book-us')">Fill out a catering inquiry below</a> or DM us @sabrandsips.</p>
+        </div>
+      </div>
+
+      <div class="who-we-serve animate-in">
+        <h3>Who We Serve</h3>
+        <p>Whether it's 15 guests or 50, Sabr & Sips makes it easy to bring elevated cafe culture to all types of events around Chicago.</p>
+        
+        <div class="serve-grid">
+          <div class="serve-card">
+            <h4>Boutique Pop-Ups & Retail</h4>
+            <img class="serve-card-img" src="images/serve-popup.jpg" alt="Pop-up event" onerror="this.outerHTML='<div class=\'serve-card-img img-placeholder\'>add serve-popup.jpg</div>'" loading="lazy"/>
+            <p>Give your customers a reason to linger. From retail launch parties to brand activations, our minimalist mobile setup fits perfectly into boutique environments, enhancing your aesthetic.</p>
+          </div>
+          
+          <div class="serve-card">
+            <h4>Private Celebrations</h4>
+            <img class="serve-card-img" src="images/serve-private.jpg" alt="Private event catering" onerror="this.outerHTML='<div class=\'serve-card-img img-placeholder\'>add serve-private.jpg</div>'" loading="lazy"/>
+            <p>Craft beverages make a statement — and what better way to thank your guests than with a matcha or latte made to order? We bring the charm and slowness your intimate gathering deserves.</p>
+          </div>
+          
+          <div class="serve-card">
+            <h4>Corporate Gatherings & Workshops</h4>
+            <img class="serve-card-img" src="images/serve-corporate.jpg" alt="Corporate catering" onerror="this.outerHTML='<div class=\'serve-card-img img-placeholder\'>add serve-corporate.jpg</div>'" loading="lazy"/>
+            <p>Looking to elevate your next team retreat or creative workshop? We provide focused, mindful service to keep your attendees nourished, energized, and engaged.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="custom-packages animate-in">
+        <h3>Custom Packages</h3>
+        <p>We believe cafe catering should be as flexible as your event needs. That's why Sabr & Sips offers several service options:</p>
+        <ul>
+          <li><strong>Pop-Up Bar Events:</strong> Unlimited drinks for a set time period. Custom menu and branding available.</li>
+          <li><strong>Mindful Catering:</strong> Full-service beverage and 100% plant-based food curation tailored entirely to your dietary restrictions.</li>
+          <li><strong>Private Events:</strong> Customizable mobile setups and menus, designed for intimate parties, showers, and celebrations.</li>
+        </ul>
+        <p style="margin-bottom: 0;">No matter the event, we make sure your service is slow, intentional, stylish, and completely stress-free.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="find-us">
+    <div class="findus-inner">
+      <div class="findus-text">
+        <h2 class="findus-h2 animate-in">Where to Find Us Next</h2>
+        <p class="findus-coming animate-in">Coming Soon</p>
+        <p class="findus-p animate-in">Check our Instagram for future locations and dates! We pop up at intimate gatherings, private celebrations, boutique events, and small venues across Chicago.</p>
+        <a href="https://instagram.com/sabrandsips" target="_blank" rel="noopener noreferrer" class="findus-ig animate-in">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          </svg>
+          @sabrandsips
+        </a>
+      </div>
+      <div class="findus-img-col animate-in">
+        <img class="findus-img" src="images/findus-setup.jpg" alt="Sabr & Sips pop-up setup"
+          onerror="this.outerHTML='<div class=\'findus-img img-placeholder\' style=\'height:300px;border-radius:8px\'>add&nbsp;findus-setup.jpg</div>'"
+          loading="lazy"/>
+        <div class="findus-badge">Next Pop-Up: TBA</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="faq-inner">
+      <h2 class="faq-h2 animate-in">Frequently Asked Questions</h2>
+      
+      <div class="faq-accordion animate-in">
+        <div class="faq-item">
+          <button class="faq-question">
+            Are all of your catering options plant-based?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, our entire catering menu is 100% plant-based. We specialize in curating elevated, nourishing vegan dishes and bites. We can also easily accommodate gluten-free, nut-free, and other specific dietary requests for your guests.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Where are your pop-ups usually located?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>We are based in Chicago, IL, and host our pop-ups at boutique venues, private celebrations, and intimate community gatherings throughout the city. We announce all upcoming public locations and dates on our Instagram.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Can I book Sabr & Sips for a private event?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely. Our mobile setup is designed to bring a refined, minimalist cafe atmosphere directly to your private gathering. We handle the aesthetics and the menu so you can focus on your guests.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What kind of drinks do you serve?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>We pour ceremonial grade matcha, slow-brewed authentic Turkish coffee, and premium espresso drinks. We also offer a selection of botanical mocktails crafted with our own house-made syrups.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="book-us">
+    <div class="contact-inner">
+      <h2 class="contact-h2 animate-in">Inquire About Your Event</h2>
+      <p class="contact-p animate-in">Ready to bring the Sabr & Sips experience to your next gathering? Fill out the form below or send us a DM on Instagram.</p>
+
+      <div class="contact-success" id="contact-success">
+        <p class="contact-success-title">Thank you!</p>
+        <p class="contact-success-p">We've received your inquiry and will be in touch soon.</p>
+      </div>
+
+      <form class="contact-form animate-in" id="contact-form" onsubmit="handleSubmit(event)">
+        <input type="text" name="name" placeholder="Name" required class="form-input" />
+        <input type="email" name="email" placeholder="Email Address" required class="form-input" />
+        <input type="text" name="eventType" placeholder="Event Type & Estimated Guest Count" required class="form-input" />
+        <textarea name="message" placeholder="Tell us about your vision, date, and any dietary requirements..." rows="4" required class="form-input"></textarea>
+        <button type="submit" class="btn-dark" style="width:100%;padding:16px;font-family:'Inter',sans-serif;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;border:none;">Send Inquiry</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p class="footer-logo">sabr & sips</p>
+    <p class="footer-location">Based in Chicago, IL</p>
+    <p class="footer-ig">Follow us on Instagram: <a href="https://instagram.com/sabrandsips" target="_blank" rel="noopener noreferrer">@sabrandsips</a></p>
+    <p class="footer-copy">© 2026 Sabr & Sips. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // ─── Nav scroll behavior ───
+    window.addEventListener('scroll', () => {
+      document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 100);
+    }, { passive: true });
+
+    // ─── Hamburger ───
+    let mobileOpen = false;
+    document.getElementById('hamburger').addEventListener('click', () => {
+      mobileOpen = !mobileOpen;
+      const overlay = document.getElementById('mobile-overlay');
+      const h1 = document.getElementById('ham1');
+      const h2 = document.getElementById('ham2');
+      overlay.classList.toggle('open', mobileOpen);
+      h1.style.transform = mobileOpen ? 'rotate(45deg) translateY(3.75px)' : 'none';
+      h2.style.transform = mobileOpen ? 'rotate(-45deg) translateY(-3.75px)' : 'none';
+    });
+    function closeMobile() {
+      mobileOpen = false;
+      document.getElementById('mobile-overlay').classList.remove('open');
+      document.getElementById('ham1').style.transform = 'none';
+      document.getElementById('ham2').style.transform = 'none';
+    }
+
+    // ─── Smooth scroll ───
+    function smoothScroll(e, selector) {
+      e.preventDefault();
+      const target = document.querySelector(selector);
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // ─── Scroll-triggered animations ───
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.animate-in').forEach(el => io.observe(el));
+
+    // ─── FAQ Accordion Logic ───
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+      question.addEventListener('click', () => {
+        question.classList.toggle('active');
+        const answer = question.nextElementSibling;
+        if (question.classList.contains('active')) {
+          answer.style.maxHeight = answer.scrollHeight + "px";
+        } else {
+          answer.style.maxHeight = 0;
+        }
+      });
+    });
+
+    // ─── Contact form ───
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.getElementById('contact-form').style.display = 'none';
+      const success = document.getElementById('contact-success');
+      success.classList.add('visible');
+      success.style.display = 'block';
+    }
+  </script>
+</body>
+</html>
