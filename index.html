@@ -1196,26 +1196,65 @@
     </div>
   </section>
 
-  <section id="book-us">
-    <div class="contact-inner">
-      <h2 class="contact-h2 animate-in">Inquire About Your Event</h2>
-      <p class="contact-p animate-in">Ready to bring the Sabr & Sips experience to your next gathering? Fill out the form below or send us a DM on Instagram.</p>
+ <!-- INQUIRY FORM SECTION -->
+<section id="inquire">
+  <h2>Inquire About Your Event</h2>
+  <p>Ready to bring the Sabr &amp; Sips experience to your next
+  gathering? Fill out the form below or send us a DM on Instagram.</p>
 
-      <div class="contact-success" id="contact-success">
-        <p class="contact-success-title">Thank you!</p>
-        <p class="contact-success-p">We've received your inquiry and will be in touch soon.</p>
-      </div>
+  <div id="form-success" style="display:none">
+    ✓ Thank you! We'll be in touch soon.
+  </div>
 
-      <form class="contact-form animate-in" id="contact-form" onsubmit="handleSubmit(event)">
-        <input type="text" name="name" placeholder="Name" required class="form-input" />
-        <input type="email" name="email" placeholder="Email Address" required class="form-input" />
-        <input type="text" name="eventType" placeholder="Event Type & Estimated Guest Count" required class="form-input" />
-        <textarea name="message" placeholder="Tell us about your vision, date, and any dietary requirements..." rows="4" required class="form-input"></textarea>
-        <button type="submit" class="btn-dark" style="width:100%;padding:16px;font-family:'Inter',sans-serif;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;border:none;">Send Inquiry</button>
-      </form>
-    </div>
-  </section>
+  <div id="form-error" style="display:none">
+    Something went wrong. Please DM us on Instagram.
+  </div>
 
+  <input type="text"     id="name"      placeholder="Name" />
+  <input type="email"    id="email"     placeholder="Email Address" />
+  <input type="text"     id="eventType" placeholder="Event Type &amp; Estimated Guest Count" />
+  <textarea             id="message"   placeholder="Tell us about your vision, date, and any dietary requirements..."></textarea>
+
+  <button onclick="submitForm()">SEND INQUIRY</button>
+</section>
+
+<script>
+  const SCRIPT_URL = "PASTE_YOUR_DEPLOYMENT_URL_HERE";
+
+  async function submitForm() {
+    const name      = document.getElementById("name").value.trim();
+    const email     = document.getElementById("email").value.trim();
+    const eventType = document.getElementById("eventType").value.trim();
+    const message   = document.getElementById("message").value.trim();
+
+    // Basic validation
+    if (!name || !email) {
+      alert("Please fill in your name and email.");
+      return;
+    }
+
+    try {
+      const response = await fetch(SCRIPT_URL, {
+        method: "POST",
+        // Note: "no-cors" is required for Apps Script from GitHub Pages
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, eventType, message })
+      });
+
+      // Show success (no-cors means we can't read the response, but it works)
+      document.getElementById("form-success").style.display = "block";
+      document.getElementById("name").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("eventType").value = "";
+      document.getElementById("message").value = "";
+
+    } catch (err) {
+      document.getElementById("form-error").style.display = "block";
+    }
+  }
+</script>
+  
   <footer>
     <p class="footer-logo">sabr & sips</p>
     <p class="footer-location">Based in Chicago, IL</p>
