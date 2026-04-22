@@ -1184,11 +1184,15 @@
         <p class="contact-success-p">We've received your inquiry and will be in touch soon.</p>
       </div>
 
-      <form class="contact-form animate-in" id="contact-form" onsubmit="handleSubmit(event)">
+     <form class="contact-form animate-in" id="contact-form" onsubmit="handleSubmit(event)">
         <input type="text" name="name" placeholder="Name" required class="form-input" />
         <input type="email" name="email" placeholder="Email Address" required class="form-input" />
-        <input type="text" name="eventType" placeholder="Event Type & Estimated Guest Count" required class="form-input" />
-        <textarea name="message" placeholder="Tell us about your vision, date, and any dietary requirements..." rows="4" required class="form-input"></textarea>
+        <input type="text" name="eventDate" placeholder="Event Date & Time" required class="form-input" />
+        <input type="text" name="location" placeholder="Event Location / Venue" required class="form-input" />
+        <input type="text" name="headcount" placeholder="Estimated Headcount" required class="form-input" />
+        <input type="text" name="menuInterest" placeholder="Menu Interests (e.g., Coffee cart, Matcha, Food)" required class="form-input" />
+        <input type="text" name="dietaryRestrictions" placeholder="Any specific dietary restrictions or allergies?" class="form-input" />
+        <textarea name="message" placeholder="Tell us about your vision for the event..." rows="4" required class="form-input"></textarea>
         <button type="submit" class="btn-dark" style="width:100%;padding:16px;font-family:'Inter',sans-serif;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;border:none;">Send Inquiry</button>
       </form>
     </div>
