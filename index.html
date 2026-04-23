@@ -707,7 +707,7 @@
       letter-spacing: 0.05em;
     }
 
-    /* ─── FAQ ─── */
+    /* ─── FAQ Section ─── */
     #faq {
       background-color: var(--white);
       padding: clamp(60px, 7vw, 100px) clamp(1.5rem, 5vw, 4rem);
@@ -1207,46 +1207,46 @@
 
   <script>
     // ─── Google Sheets form submission ───
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx7-lagsZmsOlOHgSc-Bu8GxVmOQ1HkSqIgct9MHY9nZZzaLOo37diIXMFXOVVMV5bUNw/exec";
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx7-lagsZmsOlOHgSc-Bu8GxVmOQ1HkSqIgct9MHY9nZZzaLOo37diIXMFXOVVMV5bUNw/exec'; // REPLACE THIS WITH YOUR DEPLOYED GOOGLE SCRIPT URL
 
-    async function handleSubmit(event) {
-      event.preventDefault();
+    function handleSubmit(e) {
+      e.preventDefault();
+      
+      const form = document.getElementById('contact-form');
+      const submitBtn = form.querySelector('button[type="submit"]');
+      
+      // 1. Change the button to show it is loading
+      submitBtn.innerText = "Sending...";
+      submitBtn.style.opacity = "0.7";
+      submitBtn.disabled = true;
 
-      const form = document.getElementById("contact-form");
-      const btn = form.querySelector("button[type='submit']");
-      btn.textContent = "Sending...";
-      btn.disabled = true;
+      // 2. Convert the form fields into the exact JSON format your Google Script expects
+      const formData = new FormData(form);
+      const dataObject = Object.fromEntries(formData.entries());
+      const jsonString = JSON.stringify(dataObject);
 
-      // Bundle all the fields into the data object
-      const data = {
-        name:                form.name.value.trim(),
-        email:               form.email.value.trim(),
-        eventDate:           form.eventDate.value.trim(),
-        location:            form.location.value.trim(),
-        headcount:           form.headcount.value.trim(),
-        menuInterest:        form.menuInterest.value.trim(),
-        dietaryRestrictions: form.dietaryRestrictions.value.trim(),
-        message:             form.message.value.trim()
-      };
-
-      try {
-        await fetch(SCRIPT_URL, {
-          method: "POST",
-          mode: "no-cors",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data)
-        });
-
-        form.style.display = "none";
-        const success = document.getElementById("contact-success");
-        success.style.display = "block";
-        success.classList.add("visible");
-
-      } catch (err) {
-        btn.textContent = "Send Inquiry";
-        btn.disabled = false;
-        alert("Something went wrong. Please DM us on Instagram.");
-      }
+      // 3. Send the JSON data to Google
+      fetch(SCRIPT_URL, { 
+        method: 'POST', 
+        body: jsonString,
+        headers: {
+          'Content-Type': 'text/plain;charset=utf-8'
+        }
+      })
+      .then(response => {
+        // Success! Hide the form and show your beautiful success message
+        form.style.display = 'none';
+        const success = document.getElementById('contact-success');
+        success.classList.add('visible');
+        success.style.display = 'block';
+      })
+      .catch(error => {
+        // If it fails, let the user try again
+        console.error('Error!', error.message);
+        submitBtn.innerText = "Error - Try Again";
+        submitBtn.style.opacity = "1";
+        submitBtn.disabled = false;
+      });
     }
 
     // ─── Nav scroll behavior ───
@@ -1281,7 +1281,6 @@
 
     // ─── Scroll-triggered animations ───
     const io = new IntersectionObserver((entries) => {
-      entries.,
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
